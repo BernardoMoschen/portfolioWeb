@@ -18,19 +18,18 @@ export default function Navbar() {
         height,
       }}
     >
-      <div
-        id='logo'
-        className='bg-amber-950 w-[30px] h-[30px] rounded-[30px] mr-auto'
-      />
-      <ul className='flex items-center'>
-        <li className='my-0 mx-4 bg-amber-500 w-[30px] h-[10px] rounded-[5px] '>
-          1
+      <div className='text-2xl bg-amber-950 w-auto h-auto rounded-[30px] mr-auto text-white text-center'>
+        Bernardo Moschen
+      </div>
+      <ul className='flex items-center w-auto'>
+        <li className='text-2xl my-0 mx-4 bg-amber-500 w-auto h-auto rounded-[5px] '>
+          Work
         </li>
-        <li className='my-0 mx-4 bg-amber-500 w-[30px] h-[10px] rounded-[5px]'>
-          2
+        <li className='text-2xl my-0 mx-4 bg-amber-500 w-auto h-auto rounded-[5px]'>
+          About
         </li>
-        <li className='my-0 mx-4 bg-amber-500 w-[30px] h-[10px] rounded-[5px]'>
-          3
+        <li className='text-2xl my-0 mx-4 bg-amber-500 w-auto h-auto rounded-[5px]'>
+          Contact
         </li>
       </ul>
     </motion.div>

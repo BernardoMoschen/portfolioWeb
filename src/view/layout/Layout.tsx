@@ -5,7 +5,9 @@ export default function Layout() {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <div className='pt-[120px] h-full w-full'>
+        <Outlet />
+      </div>
     </>
   );
 }

@@ -6,11 +6,16 @@ export function Home() {
 
   return (
     <>
-      <div>
+      <div className='h-full'>
         <Hero />
-        {boxCount.map((box, index) => (
-          <div className='h-[100px] rounded-sm bg-cyan-200 w-3' key={index} />
-        ))}
+        <>
+          {boxCount.map((box, index) => (
+            <div
+              className='w-[30%] h-[100px] m-[1.5%] rounded-[10px] bg-cyan-200 inline-block'
+              key={index}
+            />
+          ))}
+        </>
       </div>
     </>
   );
