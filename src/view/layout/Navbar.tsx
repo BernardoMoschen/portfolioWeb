@@ -1,4 +1,5 @@
 import { useTransform, motion, useScroll } from 'motion/react';
+import FallingText from '../components/FallingText';
 
 export default function Navbar() {
   const { scrollY } = useScroll();
@@ -18,19 +19,11 @@ export default function Navbar() {
         height,
       }}
     >
-      <div className='text-2xl  w-auto h-auto rounded-[30px] mr-autotext-center'>
-        Bernardo Moschen
-      </div>
+      <FallingText text='Bernardo Moschen' />
       <ul className='flex items-center w-auto'>
-        <li className='text-2xl my-0 mx-4  w-auto h-auto rounded-[5px] '>
-          Work
-        </li>
-        <li className='text-2xl my-0 mx-4  w-auto h-auto rounded-[5px]'>
-          About
-        </li>
-        <li className='text-2xl my-0 mx-4  w-auto h-auto rounded-[5px]'>
-          Contact
-        </li>
+        <FallingText text='Work' as={motion.li} />
+        <FallingText text='About' as={motion.li} />
+        <FallingText text='Contact' as={motion.li} />
       </ul>
     </motion.div>
   );
