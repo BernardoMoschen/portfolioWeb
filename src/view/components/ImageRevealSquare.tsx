@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const gradient = (direction: string, size: number, mask: boolean) =>
   `repeating-linear-gradient(to ${direction}, ` +
-  `black 0px, ` +
+  'black 0px, ' +
   `black ${mask ? 0 : size / 2}px, ` +
   `transparent ${mask ? 0 : size / 2}px, ` +
   `transparent ${mask ? size : size / 2}px, ` +

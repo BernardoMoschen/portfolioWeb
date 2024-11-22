@@ -23,6 +23,13 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      curly: 'error',
+      'object-shorthand': ['error', 'always'],
+      quotes: ['error', 'single', { avoidEscape: true }],
+      'arrow-body-style': ['error', 'as-needed'],
+      'no-duplicate-imports': 'error',
+      '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+      '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
     },
-  },
-)
+  }
+);

@@ -17,7 +17,7 @@ export function Projects() {
   );
 }
 
-type SectionProps = {
+interface SectionProps {
   scrollY: MotionValue<number>;
 };
 
