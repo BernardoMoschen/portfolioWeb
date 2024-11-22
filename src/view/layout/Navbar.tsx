@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <motion.div
-      className='w-full h-15 fixed top-0 right-0 left-0 z-15 text-white flex flex-row items-center justify-around px-6 font-bold text-xs tracking-[0.0200rem]'
+      className='sticky w-full h-15 top-0 right-0 left-0 z-15 text-white flex flex-row items-center justify-around px-6 font-bold text-xs tracking-[0.0200rem]'
       style={{
         background,
         height,
