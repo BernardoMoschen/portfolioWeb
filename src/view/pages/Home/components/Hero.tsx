@@ -38,8 +38,15 @@ export default function Hero() {
         <ImageRevealSquare imageUrl='https://images.unsplash.com/photo-1566545455366-bcae28fd3929?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1956&q=80' />
       </div>
       <div ref={heroContainer} className='overflow-hidden w-full'>
-        <ParallaxText scrollProgress={scrollYProgress}>
-          Transforming your dreams into reality
+        <ParallaxText
+          scrollProgress={scrollYProgress}
+          direction='right'
+          left='-115%'
+        >
+          FullStack Developer
+        </ParallaxText>
+        <ParallaxText scrollProgress={scrollYProgress} left='-15%' velocity={3}>
+          Coding ideas into reality
         </ParallaxText>
       </div>
     </div>
