@@ -1,13 +1,29 @@
+import { StaggeredGrowingText } from '../../../components/StaggeredGrowingText';
+import { motion } from 'motion/react';
+
 export default function Hero() {
   return (
     <div className='w-full text-darkRed-200'>
-      <p className='font-semibold text-xl  text-center p-8'>
+      <motion.p
+        initial={{
+          opacity: 0,
+        }}
+        viewport={{ once: true }}
+        whileInView={{
+          opacity: 1,
+          transition: {
+            duration: 2,
+          },
+        }}
+        className='font-semibold text-2xl text-center p-8'
+      >
         Full Stack Developer based in Brasil
-      </p>
+      </motion.p>
       <p className='w-full px-5 md:px-20 pb-20 font-semibold text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl justify-start'>
-        Creative
-        <br />
-        Developer
+        <StaggeredGrowingText>Creative</StaggeredGrowingText>
+        <StaggeredGrowingText childrenDelay={0.25}>
+          Developer
+        </StaggeredGrowingText>
       </p>
       <div className='flex justify-end w-full px-5 md:px-20 mb-20 font-semibold relative'>
         <img
