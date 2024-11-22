@@ -12,10 +12,10 @@ export default function Hero() {
         whileInView={{
           opacity: 1,
           transition: {
-            duration: 2,
+            duration: 1.5,
           },
         }}
-        className='font-semibold text-2xl text-center p-8'
+        className='font-semibold text-xl  text-center p-8'
       >
         Full Stack Developer based in Brasil
       </motion.p>
