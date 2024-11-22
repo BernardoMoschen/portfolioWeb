@@ -2,9 +2,9 @@ import { MotionValue, useScroll, useTransform, motion } from 'motion/react';
 import { useRef } from 'react';
 
 export function Projects() {
-  const container = useRef();
+  const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: container as any,
+    target: container,
     offset: ['start start', 'end end'],
   });
 
