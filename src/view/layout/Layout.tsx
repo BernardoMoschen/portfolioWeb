@@ -1,20 +1,11 @@
 import Navbar from './Navbar';
 import { Outlet } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { useEffect } from 'react';
-import Lenis from 'lenis';
+import { ReactLenis } from 'lenis/react';
 
 export default function Layout() {
-  useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }, []);
-
   return (
+    <ReactLenis root>
       <motion.div
         initial={{
           filter: 'blur(4px)',
@@ -32,5 +23,6 @@ export default function Layout() {
           <Outlet />
         </div>
       </motion.div>
+    </ReactLenis>
   );
 }
