@@ -2,3 +2,13 @@
 @tailwind components;
 @tailwind utilities;
  
+
+@layer base {
+  @font-face {
+    font-family: FragileBombers;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../public/fonts/FragileBombers.woff2) format('woff2');
+  }
+}

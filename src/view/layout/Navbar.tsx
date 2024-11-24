@@ -1,5 +1,6 @@
 import { useTransform, motion, useScroll } from 'motion/react';
 import FallingText from '../components/FallingText';
+import logo from '../../assets/trademark/svgLogo.svg';
 
 export default function Navbar() {
   const { scrollY } = useScroll();
@@ -22,7 +23,10 @@ export default function Navbar() {
         top,
       }}
     >
-      <FallingText text='Bernardo Moschen' />
+      <div className='flex flex-row items-center content-center'>
+        <img src={logo} className='h-[50px] w-[50px]' />
+        <FallingText text='Bernardo Moschen' />
+      </div>
       <ul className='flex items-center w-auto'>
         <FallingText text='Work' as={motion.li} />
         <FallingText text='About' as={motion.li} />

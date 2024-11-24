@@ -24,7 +24,7 @@ export default function Hero() {
             duration: 1.5,
           },
         }}
-        className='font-semibold text-xl text-center p-8'
+        className='-semibold text-xl text-center p-8'
       >
         Full Stack Developer based in Brasil
       </motion.p>
