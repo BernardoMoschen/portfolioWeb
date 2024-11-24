@@ -1,8 +1,10 @@
-import { useTransform, motion, useScroll } from 'motion/react';
+import { useTransform, motion, useScroll, AnimatePresence } from 'motion/react';
 import FallingText from '../components/FallingText';
 import logo from '../../assets/trademark/svgLogo.svg';
+import { useState } from 'react';
+import { useIsMobile } from '../../hooks/useIsMobile';
 
-export default function Navbar() {
+const NavbarDesktop = () => {
   const { scrollY } = useScroll();
 
   const background = useTransform(
@@ -34,4 +36,109 @@ export default function Navbar() {
       </ul>
     </motion.div>
   );
+};
+
+const NavbarMobile = () => {
+  const [isToggled, setToggle] = useState(false);
+  const navContainer = {
+    visible: {
+      //x: 0,
+      opacity: 1,
+      transition: {
+        x: { velocity: 100 },
+        duration: 0.3,
+      },
+    },
+    hidden: {
+      //x: -250,
+      opacity: 0,
+      transition: {
+        x: { velocity: 100 },
+        duration: 0.3,
+      },
+    },
+  };
+
+  return (
+    <>
+      <button className='btn' onClick={() => setToggle(!isToggled)}>
+        =
+      </button>
+      <AnimatePresence>
+        {isToggled && (
+          <motion.div
+            className='navbar'
+            initial='hidden'
+            animate={isToggled ? 'visible' : 'hidden'}
+            exit='hidden'
+            variants={navContainer}
+          >
+            <NavbarMobileItems />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+const NavbarMobileItems = () => {
+  const items = ['Home', 'Products', 'Services', 'About'];
+
+  const navList = {
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.07,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1,
+      },
+    },
+  };
+
+  const navItem = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    hidden: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+  };
+
+  return (
+    <>
+      <motion.ul
+        className='navList'
+        initial='hidden'
+        animate='visible'
+        exit='hidden'
+        variants={navList}
+      >
+        {items.map((item) => (
+          <motion.li className='nav-item' variants={navItem} key={item}>
+            <p>{item}</p>
+          </motion.li>
+        ))}
+      </motion.ul>
+    </>
+  );
+};
+
+export function Navbar() {
+  const { isMobile } = useIsMobile();
+
+  return isMobile ? <NavbarMobile /> : <NavbarDesktop />;
 }
