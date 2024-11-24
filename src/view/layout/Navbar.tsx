@@ -16,18 +16,18 @@ export default function Navbar() {
 
   return (
     <motion.div
-      className='sticky z-10 w-full h-[40px] py-4 right-0 left-0 z-15 text-cadet_lavender-900 flex flex-row items-center justify-around px-6 font-extrabold text-xs tracking-[0.0200rem]'
+      className='sticky z-10 w-[30px] h-full py-4 right-0 left-0 z-15 text-cadet_lavender-900 flex flex-col items-center justify-around px-6 font-extrabold text-xs tracking-[0.0200rem]'
       style={{
         background,
         borderRadius,
         top,
       }}
     >
-      <div className='flex flex-row items-center content-center'>
+      <div className='flex flex-col items-center content-center'>
         <img src={logo} className='h-[50px] w-[50px]' />
         <FallingText text='Bernardo Moschen' />
       </div>
-      <ul className='flex items-center w-auto'>
+      <ul className='flex flex-col items-center w-auto'>
         <FallingText text='Work' as={motion.li} />
         <FallingText text='About' as={motion.li} />
         <FallingText text='Contact' as={motion.li} />
