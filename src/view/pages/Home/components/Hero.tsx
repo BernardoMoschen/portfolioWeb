@@ -12,7 +12,7 @@ export default function Hero() {
   });
 
   return (
-    <div className='w-full text-darkRed-200'>
+    <div className='w-full text-cadet_brown-900'>
       <motion.p
         initial={{
           opacity: 0,
@@ -24,7 +24,7 @@ export default function Hero() {
             duration: 1.5,
           },
         }}
-        className='font-semibold text-xl  text-center p-8'
+        className='font-semibold text-xl text-center p-8'
       >
         Full Stack Developer based in Brasil
       </motion.p>

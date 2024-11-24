@@ -25,7 +25,7 @@ ParallaxProps) {
 
   return (
     <motion.div
-      className='text-white text-[90px] flex uppercase flex-nowrap whitespace-nowrap font-bold'
+      className='text-cadet_brown-900 text-[90px] flex uppercase flex-nowrap whitespace-nowrap font-bold'
       style={{
         x,
         left,
