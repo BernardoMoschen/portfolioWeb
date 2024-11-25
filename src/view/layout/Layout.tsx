@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { StaggeredGrowingText } from '../components/StaggeredGrowingText';
 import logo from '../../assets/trademark/svgLogo.svg';
 import arrowDown from '../../assets/icons/arrow-down-com.svg';
-import { Navbar } from './Navbar';
+
 interface LayoutSectionProps {
   scrollY: MotionValue<number>;
 }
@@ -75,7 +75,7 @@ const Cover = ({ scrollY }: LayoutSectionProps) => {
       style={{ scale, rotate }}
       className='sticky top-0 h-screen w-screen'
     >
-      <Navbar />
+      {/* <Navbar /> */}
       <motion.div
         className='flex flex-col justify-evenly h-svh py-[5%]'
         initial={{
@@ -116,7 +116,7 @@ const LayoutOutlet = ({ scrollY }: LayoutSectionProps) => {
       transition={{
         delayChildren: 5,
       }}
-      className='relative h-screen w-screen bg-black '
+      className='relative h-full w-screen bg-cadet_brown-800                                                                                                   '
     >
       <div className='pt-[120px] h-full w-full'>
         <Outlet />
