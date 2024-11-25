@@ -1,7 +1,7 @@
 export default function KnownTools() {
   return (
     <div className='flex flex-col w-1/2'>
-      <div>Known tools</div>
+      <div className='text-4xl'>Known tools</div>
       <div className='bg-blue-400'>
         {Array.from(Array(7).keys()).map((_box, index) => (
           <div

@@ -8,7 +8,7 @@ export default function Hero2() {
     <div className='flex flex-col gap-8'>
       <div className='text-start text-6xl'>About</div>
       <div>
-        <motion.p className='text-3xl'>
+        <motion.p className='text-4xl'>
           <ProgressText>
             Software engineer and full-stack developer. I have developed a wide
             range of system management solutions and web applications using

@@ -49,7 +49,7 @@ function ProgressWord({ children, range, progress }: ProgressWord) {
   const step = amount / children.length;
 
   return (
-    <span className='mr-4 mt-4 relative'>
+    <span className='mr-2.5 mt-2 relative'>
       {characters.map((char, i) => {
         const start = range[0] + step * i;
         const end = range[0] + step * (i + 1);
