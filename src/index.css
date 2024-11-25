@@ -5,10 +5,17 @@
 
 @layer base {
   @font-face {
-    font-family: FragileBombers;
+    font-family: sans;
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(../public/fonts/FragileBombers.woff2) format('woff2');
+    /* src: url(../public/fonts/ChailceNogginReg.woff2) format('woff2'); */
   }
+  /* @font-face {
+    font-family: ChailceNogginReg;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../public/fonts/ChailceNogginReg.woff2) format('woff2');
+  } */
 }

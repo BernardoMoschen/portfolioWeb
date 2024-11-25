@@ -23,7 +23,7 @@ const ScrollButton = () => (
     }}
     className='flex w-full  flex-col items-center justify-center'
   >
-    <p className='text-white'>scroll down</p>
+    <p className='text-white text-lg'>scroll down</p>
     <motion.img
       className='h-[30px] w-[30px]'
       animate={{
@@ -73,7 +73,7 @@ const Cover = ({ scrollY }: LayoutSectionProps) => {
   return (
     <motion.section
       style={{ scale, rotate }}
-      className='sticky top-0 h-screen w-screen'
+      className='sticky top-0 h-screen w-screen bg-black'
     >
       {/* <Navbar /> */}
       <motion.div
@@ -116,7 +116,7 @@ const LayoutOutlet = ({ scrollY }: LayoutSectionProps) => {
       transition={{
         delayChildren: 5,
       }}
-      className='relative h-full w-screen bg-cadet_brown-800                                                                                                   '
+      className='relative h-full w-screen bg-black px-[5%]'
     >
       <div className='pt-[120px] h-full w-full'>
         <Outlet />

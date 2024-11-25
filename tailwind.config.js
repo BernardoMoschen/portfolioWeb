@@ -3,10 +3,9 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 /** @type {import('tailwindcss').Config} */ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    fontFamily: {
-      sans: ['FragileBombers', ...defaultTheme.fontFamily.sans],
-      body: ['FragileBombers'],
-    },
+    // fontFamily: {
+    // sans: ['ChailceNogginReg', ...defaultTheme.fontFamily.sans],
+    // },
     extend: {
       colors: {
         cadet_lavender: {
