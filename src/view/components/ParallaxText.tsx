@@ -1,6 +1,6 @@
 import { motion, MotionValue, useTransform } from 'framer-motion';
 
-interface ParallaxProps {
+interface Props {
   children: string;
   scrollProgress: MotionValue;
   direction?: 'left' | 'right';
@@ -15,7 +15,7 @@ export function ParallaxText({
   left,
   velocity = 1,
 }: // baseVelocity = 25,
-ParallaxProps) {
+Props) {
   const dir = direction === 'left' ? -1 : 1;
   const x = useTransform(
     scrollProgress,
