@@ -4,7 +4,7 @@ import { ReactLenis } from 'lenis/react';
 import { AuroraBackground } from '../components/AuroraHero';
 import Navbar from './Navbar';
 
-export default function Layout2() {
+export default function Layout() {
   return (
     <ReactLenis root>
       <motion.div
