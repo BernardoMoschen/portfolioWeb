@@ -29,7 +29,6 @@ export function AuroraBackground({ children }: Props) {
       style={{
         backgroundImage,
       }}
-      // className='relative grid min-h-screen place-content-center overflow-hidden bg-yellow-300 px-4 pb-4 text-green-200-200'
     >
       {children}
     </motion.section>

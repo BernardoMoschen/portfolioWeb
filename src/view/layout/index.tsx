@@ -1,14 +1,14 @@
 import { Outlet } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ReactLenis } from 'lenis/react';
-import { AuroraBackground } from '../components/AuroraHero';
+// import { AuroraBackground } from '../components/AuroraHero';
 import Navbar from './Navbar';
 
 export default function Layout2() {
   return (
     <ReactLenis root>
       <motion.div
-        className='h-full'
+        className='h-full bg-background-light text-text-light'
         initial={{
           filter: 'blur(4px)',
         }}
@@ -20,10 +20,12 @@ export default function Layout2() {
           },
         }}
       >
-        <AuroraBackground>
-          <Navbar />
+        {/* <AuroraBackground> */}
+        <Navbar />
+        <div className='mx-20 bg-transparent'>
           <Outlet />
-        </AuroraBackground>
+        </div>
+        {/* </AuroraBackground> */}
       </motion.div>
     </ReactLenis>
   );

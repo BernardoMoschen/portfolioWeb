@@ -1,7 +1,14 @@
 import { useAnimation, motion } from 'motion/react';
 import { useEffect } from 'react';
 
-export function FallingDivs() {
+interface Props {
+  items: Array<{
+    img: string;
+    tooltip: string;
+  }>;
+}
+
+export function FallingDivs({ items }: Props) {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -15,13 +22,6 @@ export function FallingDivs() {
       },
     }));
   }, [controls]);
-
-  const items = [
-    { logo: '🔥', tooltip: 'Fire' },
-    { logo: '🌊', tooltip: 'Water' },
-    { logo: '🍃', tooltip: 'Earth' },
-    { logo: '⚡', tooltip: 'Electricity' },
-  ];
 
   return (
     <div>
@@ -39,7 +39,7 @@ export function FallingDivs() {
           >
             {/* Tooltip with Logo */}
             <div className='relative'>
-              <span className='text-2xl'>{item.logo}</span>
+              <img src={item.img} alt={item.tooltip} />
               <div className='absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 hover:opacity-100 transition-opacity'>
                 {item.tooltip}
               </div>

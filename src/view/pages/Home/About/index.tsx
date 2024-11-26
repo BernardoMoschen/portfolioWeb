@@ -1,14 +1,42 @@
 import PreferredStack from './components/PreferredStack';
 import KnownTools from './components/KnownTools';
-import { ProgressText, FallingDivs } from '../../../components';
+import { ProgressText, FallingDivs } from '../../../components/animated';
 import { motion } from 'framer-motion';
+import Title from '@/view/components/Title';
 
 export default function About() {
+  const mock = [
+    {
+      img: 'https://www.svgrepo.com/show/354259/react.svg',
+      tooltip: 'React',
+    },
+    {
+      img: 'https://www.svgrepo.com/show/354259/react.svg',
+      tooltip: 'React',
+    },
+    {
+      img: 'https://www.svgrepo.com/show/354259/react.svg',
+      tooltip: 'React',
+    },
+    {
+      img: 'https://www.svgrepo.com/show/354259/react.svg',
+      tooltip: 'React',
+    },
+    {
+      img: 'https://www.svgrepo.com/show/354259/react.svg',
+      tooltip: 'React',
+    },
+    {
+      img: 'https://www.svgrepo.com/show/354259/react.svg',
+      tooltip: 'React',
+    },
+  ];
+
   return (
     <div className='flex flex-col gap-8'>
-      <div className='text-start text-4xl text-white'>About</div>
+      <Title>About</Title>
       <div>
-        <motion.div className='text-2xl text-white w-3/4'>
+        <motion.div className='text-2xl  w-3/4'>
           <ProgressText>
             Software engineer and full-stack developer. I have developed a wide
             range of system management solutions and web applications using
@@ -20,9 +48,6 @@ export default function About() {
       <div className='flex flex-row gap-4 justify-between'>
         <PreferredStack />
         <KnownTools />
-      </div>
-      <div>
-        <FallingDivs />
       </div>
     </div>
   );
