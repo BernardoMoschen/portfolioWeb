@@ -26,7 +26,7 @@ export default function Tech() {
     },
   ];
   return (
-    <div className='h-full w-full flex flex-col items-center text-center'>
+    <div className='h-full w-full flex flex-col items-center text-center bg-stone-800 py-20 border-y-2 border-white'>
       <div className='w-1/2  '>
         <div>technologies i work with</div>
         <span>there's even more ----&gt;</span>

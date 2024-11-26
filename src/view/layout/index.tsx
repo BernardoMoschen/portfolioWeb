@@ -11,10 +11,12 @@ export default function Layout() {
         className='bg-background-light'
         initial={{
           filter: 'blur(4px)',
+          transform: 'scale(1.5)',
         }}
         viewport={{ once: true }}
         whileInView={{
           filter: 'blur(0px)',
+          transform: 'scale(1)',
           transition: {
             duration: 0.75,
           },

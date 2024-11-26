@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className={`relative z-50 top-0 w-full bg-opacity-70 backdrop-blur-md px-6 py-2 ${
+      className={`relative z-50 top-0 w-full bg-opacity-70 backdrop-blur-md px-6 py-4 ${
         isScrolled ? 'bg-background-dark' : 'bg-transparent'
       } text-white transition-all`}
       variants={navbarVariants}

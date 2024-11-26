@@ -6,7 +6,8 @@ const defaultTheme = require('tailwindcss/defaultTheme');
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Sniglet"', '"Fira Code"', ...defaultTheme.fontFamily.sans],
+        sans: ['"Fira Code"', '"Fira Code"', ...defaultTheme.fontFamily.sans],
+        // sans: ['"Sniglet"', '"Fira Code"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {
@@ -30,3 +31,5 @@ const defaultTheme = require('tailwindcss/defaultTheme');
   },
   plugins: [],
 };
+
+//linear-gradient(rgba(31, 31, 31, 0.25) 0%, rgba(18, 18, 18, 0.41) 100%)

@@ -45,7 +45,6 @@ import { motion } from 'framer-motion';
 //         </div> */}
 //   </motion.div>
 //  Right Section
-{
   /* <motion.div
   className='relative mt-10 md:mt-0'
   initial={{ opacity: 0, scale: 0.8 }}
@@ -60,7 +59,6 @@ import { motion } from 'framer-motion';
     />
   </div>
 </motion.div>; */
-}
 // );
 
 export default function Hero() {
@@ -79,21 +77,22 @@ export default function Hero() {
   };
 
   return (
-    <div
-      className='relative h-screen flex items-center justify-evenly
-      '
-    >
+    <div className='h-screen w-full px-4 flex flex-col items-center justify-center'>
       <motion.div
-        className='flex flex-col items-start'
         variants={containerVariants}
         initial='hidden'
         animate='visible'
       >
-        <motion.h1 className='text-2xl md:text-7xl ' variants={itemVariants}>
-          BRING YOUR
-          <span className='text-500 text-secondary-light'>IDEAS</span>
-          TO REALITY
-        </motion.h1>
+        <div>
+          <motion.h1
+            className='text-6xl md:text-8xl w-full uppercase'
+            variants={itemVariants}
+          >
+            Bring your
+            <span className='text-500 text-secondary-light'>IDEAS</span>
+            to reality
+          </motion.h1>
+        </div>
       </motion.div>
     </div>
   );
