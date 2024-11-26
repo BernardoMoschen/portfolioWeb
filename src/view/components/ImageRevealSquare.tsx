@@ -26,13 +26,17 @@ interface Props extends ComponentProps<'img'> {
   imageUrl: string;
 }
 
-export function ImageRevealSquare({ imageUrl, ...imageProps }: Props) {
+export function ImageRevealSquare({
+  imageUrl,
+  className,
+  ...imageProps
+}: Props) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
 
   return (
     <motion.div
-      className='block w-full md:w-1/2'
+      className={className}
       initial={false}
       animate={
         isLoaded && isInView

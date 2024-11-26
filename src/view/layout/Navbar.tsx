@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Navbar() {
+  const navLinks = ['Home', 'About', 'Services'];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -18,7 +19,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className={`sticky z-50 top-0 w-full bg-opacity-70 backdrop-blur-md px-6 py-4 ${
+      className={`sticky z-50 top-0 w-full bg-opacity-70 backdrop-blur-md px-6 py-2 ${
         isScrolled ? 'bg-gray-800' : 'bg-transparent'
       } text-white transition-all`}
       variants={navbarVariants}
@@ -26,7 +27,7 @@ export default function Navbar() {
       animate='visible'
     >
       <div className='flex justify-between items-center'>
-        <div className='text-2xl font-bold'>Brand</div>
+        <div className='text-xl font-bold'>Bernardo Moschen</div>
         <div
           className='md:hidden flex flex-col gap-1 cursor-pointer'
           onClick={() => setIsOpen(!isOpen)}
@@ -47,9 +48,9 @@ export default function Navbar() {
         <ul
           className={`${
             isOpen ? 'flex' : 'hidden'
-          } md:flex flex-col md:flex-row items-center gap-6 text-white`}
+          } text-md md:flex flex-col md:flex-row items-center gap-6 text-white`}
         >
-          {['Home', 'About', 'Services', 'Contact'].map((item) => (
+          {navLinks.map((item) => (
             <motion.li
               key={item}
               whileHover={{ scale: 1.1 }}
@@ -62,7 +63,7 @@ export default function Navbar() {
           ))}
           <motion.li whileHover={{ scale: 1.1 }}>
             <button className='px-4 py-2 bg-red-500 text-white rounded-full'>
-              Get Started
+              Contact me
             </button>
           </motion.li>
         </ul>

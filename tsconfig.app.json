@@ -33,5 +33,5 @@
     },
 
   },
-  "include": ["src", "deprecated/Layout.tsx", "deprecated/Navbar.tsx"]
+  "include": ["src", "deprecated/Cover.tsx", "deprecated/Navbar.tsx"]
 }

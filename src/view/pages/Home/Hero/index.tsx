@@ -1,4 +1,6 @@
+import { ImageRevealSquare } from '../../../components';
 import { motion } from 'framer-motion';
+import myselfImg from '../../../../assets/myself_linkedin_cropped.jpeg';
 
 export default function Hero() {
   const containerVariants = {
@@ -20,7 +22,7 @@ export default function Hero() {
   };
 
   return (
-    <div className='h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-16 bg-transparent'>
+    <div className='h-screen flex flex-col md:flex-row items-center justify-evenly px-8 md:px-16 bg-transparent'>
       {/* Left Section */}
       <motion.div
         className='flex flex-col items-start max-w-lg space-y-4'
@@ -29,16 +31,19 @@ export default function Hero() {
         animate='visible'
       >
         <motion.h1
-          className='text-4xl md:text-6xl font-bold text-gray-800'
+          className='text-3xl md:text-6xl font-bold text-text-dark'
           variants={itemVariants}
         >
-          Hello, I'm <span className='text-blue-500'>[Your Name]</span>
+          Hello,
+          <br />
+          I'm{' '}
+          <span className='text-500 text-secondary-dark'>Bernardo Moschen</span>
         </motion.h1>
         <motion.p
           className='text-lg md:text-xl text-gray-600'
           variants={itemVariants}
         >
-          I’m a <span className='font-semibold'>[Your Profession]</span>{' '}
+          I’m a <span className='font-semibold'>FullStack Developer</span>{' '}
           passionate about creating innovative and impactful digital solutions.
         </motion.p>
         <div className='flex space-x-4'>
@@ -68,11 +73,11 @@ export default function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className='w-72 h-72 md:w-96 md:h-96 bg-blue-100 rounded-full flex items-center justify-center shadow-lg'>
-          <img
-            src='https://via.placeholder.com/150'
-            alt='Profile'
-            className='w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white'
+        <div className='w-72 h-72 md:w-96 md:h-96 bg-blue-100 rounded-full flex items-center  justify-center shadow-lg'>
+          <ImageRevealSquare
+            imageUrl={myselfImg}
+            alt='Bernardo Moschen'
+            className='w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white flex justify-center'
           />
         </div>
       </motion.div>
