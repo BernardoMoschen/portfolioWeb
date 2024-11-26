@@ -32,6 +32,7 @@ export function StaggeredGrowingText({
   children,
   childrenDelay = 0,
   childrenStagger = 0.055,
+  className,
 }: Props) {
   const containerVariants: Variants = {
     hidden: {
@@ -49,7 +50,7 @@ export function StaggeredGrowingText({
 
   return (
     <motion.div
-      className='flex overflow-hidden'
+      className={'flex overflow-hidden ' + className}
       variants={containerVariants}
       viewport={{ once: true }}
       whileInView='visible'

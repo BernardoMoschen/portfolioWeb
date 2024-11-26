@@ -4,11 +4,11 @@ import { ReactLenis } from 'lenis/react';
 // import { AuroraBackground } from '../components/AuroraHero';
 import Navbar from './Navbar';
 
-export default function Layout2() {
+export default function Layout() {
   return (
     <ReactLenis root>
       <motion.div
-        className='h-full bg-background-light text-text-light'
+        className='bg-background-light'
         initial={{
           filter: 'blur(4px)',
         }}
@@ -21,8 +21,8 @@ export default function Layout2() {
         }}
       >
         {/* <AuroraBackground> */}
-        <Navbar />
-        <div className='mx-20 bg-transparent'>
+        <div className='h-full text-text-light'>
+          <Navbar />
           <Outlet />
         </div>
         {/* </AuroraBackground> */}

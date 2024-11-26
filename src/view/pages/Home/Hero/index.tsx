@@ -78,23 +78,18 @@ export default function Hero() {
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
-  // const buttonVariants = {
-  //   hover: { scale: 1.1, boxShadow: '0px 4px 10px rgba(0,0,0,0.3)' },
-  // };
   return (
     <div
-      className='h-screen  px-8 md:px-16 bg-transparent 
-      flex flex-col md:flex-row items-center justify-evenly
+      className='relative h-screen flex items-center justify-evenly
       '
     >
-      {/* Left Section */}
       <motion.div
-        className='flex flex-col items-start max-w-lg space-y-4'
+        className='flex flex-col items-start'
         variants={containerVariants}
         initial='hidden'
         animate='visible'
       >
-        <motion.h1 className='text-1xl md:text-6xl ' variants={itemVariants}>
+        <motion.h1 className='text-2xl md:text-7xl ' variants={itemVariants}>
           BRING YOUR
           <span className='text-500 text-secondary-light'>IDEAS</span>
           TO REALITY

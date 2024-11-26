@@ -23,7 +23,7 @@ function ProgressParagraph({ children }: ProgressParagraph) {
   });
 
   return (
-    <p className='flex flex-wrap p-[40px]' ref={pElement}>
+    <p className='flex flex-wrap p-4' ref={pElement}>
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;
