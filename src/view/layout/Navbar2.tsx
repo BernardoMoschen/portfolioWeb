@@ -18,7 +18,7 @@ const Navbar2 = () => {
 
   return (
     <motion.nav
-      className={`sticky top-0 w-full bg-opacity-70 backdrop-blur-md px-6 py-4 ${
+      className={`sticky z-50 top-0 w-full bg-opacity-70 backdrop-blur-md px-6 py-4 ${
         isScrolled ? 'bg-gray-800' : 'bg-transparent'
       } text-white transition-all`}
       variants={navbarVariants}
