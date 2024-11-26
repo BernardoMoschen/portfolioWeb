@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ReactLenis } from 'lenis/react';
 import { AuroraBackground } from '../components/AuroraHero';
+import { Navbar2 } from './Navbar2';
 
 export default function Layout2() {
   return (
@@ -19,9 +20,10 @@ export default function Layout2() {
           },
         }}
       >
-        AuroraBackground
-        <AuroraBackground />
-        <Outlet />
+        <AuroraBackground>
+          <Navbar2 />
+          <Outlet />
+        </AuroraBackground>
       </motion.div>
     </ReactLenis>
   );

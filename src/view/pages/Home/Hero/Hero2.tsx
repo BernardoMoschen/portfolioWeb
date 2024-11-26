@@ -1,7 +1,8 @@
-import { motion } from 'motion/react';
 import PreferredStack from './components/PreferredStack';
 import KnownTools from './components/KnownTools';
 import ProgressText from '../../../components/ProgressText';
+import { motion } from 'framer-motion';
+import { FallingDivs } from '../../../../view/components/FallingDivs';
 
 export default function Hero2() {
   return (
@@ -20,6 +21,9 @@ export default function Hero2() {
       <div className='flex flex-row gap-4 justify-between'>
         <PreferredStack />
         <KnownTools />
+      </div>
+      <div>
+        <FallingDivs />
       </div>
     </div>
   );

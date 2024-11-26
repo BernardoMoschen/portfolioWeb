@@ -4,12 +4,16 @@ import {
   useMotionValue,
   animate,
 } from 'motion/react';
-import { useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
+
+interface Props {
+  children: ReactNode;
+}
 
 const colors = ['#13FFAA', '#1E67C6', '#CE84CF', '#DD335C'];
-export function AuroraBackground() {
+export function AuroraBackground({ children }: Props) {
   const color = useMotionValue(colors[0]);
-  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color}`;
+  const backgroundImage = useMotionTemplate`radial-gradient(115% 175% at 50% 0%, #020617 50%, ${color}`;
 
   useEffect(() => {
     animate(color, colors, {
@@ -25,9 +29,9 @@ export function AuroraBackground() {
       style={{
         backgroundImage,
       }}
-      className='relative grid min-h-screen place-content-center overflow-hidden bg-gray-950 px-4 py-24 text-gray-200'
+      // className='relative grid min-h-screen place-content-center overflow-hidden bg-yellow-300 px-4 pb-4 text-green-200-200'
     >
-      AuroraHero
+      {children}
     </motion.section>
   );
 }
