@@ -28,11 +28,11 @@ const childVariants: Variants = {
   },
 };
 
-export const StaggeredGrowingText = ({
+export function StaggeredGrowingText({
   children,
   childrenDelay = 0,
   childrenStagger = 0.055,
-}: Props) => {
+}: Props) {
   const containerVariants: Variants = {
     hidden: {
       opacity: 0,

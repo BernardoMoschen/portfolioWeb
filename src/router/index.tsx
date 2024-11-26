@@ -1,6 +1,6 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { Home } from '../view/pages';
-import Layout2 from '../view/layout/Layout2';
+import Layout2 from '../view/layout/index';
 
 export function Router() {
   return (

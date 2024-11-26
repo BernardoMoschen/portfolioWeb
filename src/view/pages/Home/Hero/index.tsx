@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const Hero3 = () => {
+export default function Hero() {
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -78,6 +78,4 @@ const Hero3 = () => {
       </motion.div>
     </div>
   );
-};
-
-export { Hero3 };
+}

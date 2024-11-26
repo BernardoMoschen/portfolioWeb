@@ -1,7 +1,7 @@
 import PreferredStack from './components/PreferredStack';
 import KnownTools from './components/KnownTools';
 import ProgressText from '../../../components/ProgressText';
-import { FallingDivs } from '../../../../view/components/FallingDivs';
+import { FallingDivs } from '../../../components/FallingDivs';
 import { motion } from 'framer-motion';
 
 export default function About() {

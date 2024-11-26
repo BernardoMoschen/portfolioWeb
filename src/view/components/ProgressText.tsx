@@ -5,7 +5,7 @@ interface Props {
   children: string;
 }
 
-export default function ProgressText({ children }: Props) {
+export function ProgressText({ children }: Props) {
   return <ProgressParagraph>{children}</ProgressParagraph>;
 }
 
