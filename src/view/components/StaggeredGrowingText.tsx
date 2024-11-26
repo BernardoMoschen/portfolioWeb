@@ -10,6 +10,7 @@ interface Props {
 const childVariants: Variants = {
   hidden: {
     y: '+100%',
+    scale: 0.75,
     transition: {
       type: 'spring',
       damping: 0,
@@ -18,6 +19,7 @@ const childVariants: Variants = {
   },
   visible: {
     y: 0,
+    scale: 1,
     transition: {
       type: 'spring',
       damping: 50,
