@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import homeSvg from '@/assets/icons/home-2.svg';
 import { Icon, Logo } from '../components';
 import { useState } from 'react';
 import { NavbarItems } from './NavbarItems';
@@ -36,15 +35,15 @@ const NavbarMenu = () => {
   return (
     <div className='md:grid hidden  rounded-full p-1'>
       <div className='rounded-full bg-g-primary gradient-primary p-[2px]'>
-        <div className='w-full h-full  bg-accent-surface rounded-full'>
-          <div className='grid grid-rows-1 grid-cols-4 r bg-g-square gap-10  py-3 px-4 rounded-full place-items-center '>
+        <div className='w-full h-full bg-accent-black rounded-full'>
+          <div className='grid grid-rows-1 grid-cols-4 r bg-g-square gap-1 lg:gap-10 py-1 md:py-3 px-2 md:px-4 rounded-full place-items-center '>
             {navLinks.map((link, i) =>
               i === 0 ? (
-                <div className='bg-[#292929] py-3 px-6 rounded-full'>
-                  <img className='h-5 w-5' src={homeSvg} />
+                <div className='bg-accent-surface py-3 px-6 rounded-full'>
+                  <Icon className='h-5 w-5' icon='Home' />
                 </div>
               ) : (
-                <div className='text-white text-lg'>{link}</div>
+                <div className='text-white text-sm md:text-lg'>{link}</div>
               )
             )}
           </div>
