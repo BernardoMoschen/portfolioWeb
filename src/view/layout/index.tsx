@@ -20,7 +20,7 @@ export default function Layout() {
           },
         }}
       >
-        <div className='h-full text-white'>
+        <div className='h-svh text-white'>
           <Navbar />
           <Outlet />
         </div>

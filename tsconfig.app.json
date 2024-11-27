@@ -32,5 +32,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "src/deprecated/Cover.tsx", "src/deprecated/Navbar.tsx"]
+  "include": ["src"]
 }

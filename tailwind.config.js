@@ -13,6 +13,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
           primary: '#E63E21',
           secondary: '#193f4a',
           black: '#1B1B1B',
+          surface: '#292929',
         },
       },
     },
