@@ -20,9 +20,13 @@ export default function Layout() {
           },
         }}
       >
-        <div className='h-svh text-white'>
+        <div className='h-svh w-full text-white'>
           <Navbar />
-          <Outlet />
+          <div className='p-4'>
+            <div className='h-full w-full bg-accent-black'>
+              <Outlet />
+            </div>
+          </div>
         </div>
       </motion.div>
     </ReactLenis>

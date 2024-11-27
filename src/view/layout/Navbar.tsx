@@ -71,9 +71,9 @@ export default function Navbar() {
   };
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex w-full flex-col'>
       <motion.nav
-        className={'w-full px-2 py-2'}
+        className=' px-2 py-2'
         variants={navbarVariants}
         initial='hidden'
         animate='visible'
