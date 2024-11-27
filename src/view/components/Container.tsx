@@ -1,11 +1,16 @@
 import { ReactNode } from 'react';
 
 interface Props {
-  children: ReactNode;
+  children?: ReactNode;
+  className?: string;
 }
 
-export const Container = ({ children }: Props) => (
-  <div className='bg-accent-black border-2 border-accent-surface h-fit w-fit'>
+export const Container = ({ children, className }: Props) => (
+  <div
+    className={'bg-accent-black border-2 border-accent-surface rounded-[30px] h-fit w-fit'.concat(
+      ` ${className}`
+    )}
+  >
     {children}
   </div>
 );

@@ -22,10 +22,8 @@ export default function Layout() {
       >
         <div className='h-svh w-full text-white'>
           <Navbar />
-          <div className='p-4'>
-            <div className='h-full w-full bg-accent-black'>
-              <Outlet />
-            </div>
+          <div className='p-4 h-full w-full'>
+            <Outlet />
           </div>
         </div>
       </motion.div>
