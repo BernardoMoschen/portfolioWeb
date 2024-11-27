@@ -24,7 +24,9 @@ const NavbarMobile = ({
 );
 const NavbarLogo = () => (
   <div className='flex flex-row items-center'>
-    <Logo className='h-12 w-12 md:h-16 md:w-16' />
+    <div className='bg-accent-black border-2 border-accent-surface rounded-full mr-2 h-12 md:h-16 w-12 md:w-16'>
+      <Logo className='w-full h-full' />
+    </div>
     <div className={'text-lg md:text-xl font-semibold'}>bernardoMoschen</div>
   </div>
 );
@@ -39,7 +41,7 @@ const NavbarMenu = () => {
           <div className='grid grid-rows-1 grid-cols-4 r bg-g-square gap-1 lg:gap-10 py-1 md:py-3 px-2 md:px-4 rounded-full place-items-center '>
             {navLinks.map((link, i) =>
               i === 0 ? (
-                <div className='bg-accent-surface py-3 px-6 rounded-full'>
+                <div className='bg-accent-surface py-3 px-6 rounded-full '>
                   <Icon className='h-5 w-5' icon='Home' />
                 </div>
               ) : (
