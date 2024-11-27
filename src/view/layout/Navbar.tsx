@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import myLogo from '@/assets/trademark/svgLogo.svg';
 import homeSvg from '@/assets/icons/home-2.svg';
+import { Logo } from '../components';
 
 const NavbarLogo = () => (
   <div className='flex flex-row items-center'>
-    <img src={myLogo} className='h-16 w-16' />
+    <Logo className='h-16 w-16' />
     <div className={'text-xl font-semibold'}>bernardoMoschen</div>
   </div>
 );
