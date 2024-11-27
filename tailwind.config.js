@@ -18,6 +18,10 @@ const defaultTheme = require('tailwindcss/defaultTheme');
           light: '#493628', // White background for light mode
           dark: '#AB886D', // Dark slate background for dark mode
         },
+        tertiary: {
+          light: '#DF7212',
+          dark: '#DF7212',
+        },
         background: {
           light: '#E4E0E1', // White background for light mode
           dark: '#493628', // Dark slate background for dark mode

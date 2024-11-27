@@ -9,9 +9,9 @@ import myImage from '@/assets/myself_linkedin_cropped.jpeg';
 
 export default function About() {
   return (
-    <div className=' h-screen  bg-stone-800'>
+    <div className=' h-screen  bg-black'>
       <div className='h-full flex flex-row gap-4'>
-        <div className=' w-2/6  flex flex-col justify-center items-center bg-background-dark'>
+        <div className=' w-2/6  flex flex-col justify-center items-center bg-black'>
           {/*  bg-gradient-to-tr from-amber-50 to-amber-900  */}
           <ImageRevealSquare
             imageUrl={myImage}

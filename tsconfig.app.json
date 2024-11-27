@@ -29,9 +29,8 @@
     "forceConsistentCasingInFileNames": true,
 
     "paths": {
-      "@/*": ["./src/*"],
-    },
-
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["src", "deprecated/Cover.tsx", "deprecated/Navbar.tsx"]
+  "include": ["src", "src/deprecated/Cover.tsx", "src/deprecated/Navbar.tsx"]
 }

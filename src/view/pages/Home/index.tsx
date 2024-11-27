@@ -4,10 +4,12 @@ import Tech from './Tech';
 
 export function Home() {
   return (
-    <div className='flex flex-col'>
-      <Hero />
-      <About />
-      <Tech />
-    </div>
+    <>
+      <div className='flex flex-col'>
+        <Hero />
+        <About />
+        <Tech />
+      </div>
+    </>
   );
 }
