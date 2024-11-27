@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 interface Props {
   children?: ReactNode;
   className?: string;
+  style?: Record<string, string>;
 }
 
 export const Container = ({ children, className }: Props) => (
