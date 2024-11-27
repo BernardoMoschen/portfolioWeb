@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
 
 @layer base {
   @font-face {
@@ -9,13 +8,19 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    /* src: url(../public/fonts/ChailceNogginReg.woff2) format('woff2'); */
   }
-  /* @font-face {
-    font-family: ChailceNogginReg;
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(../public/fonts/ChailceNogginReg.woff2) format('woff2');
-  } */
+}
+
+@layer utilities {
+  .bg-g-primary {
+    background: linear-gradient(to right, #193f4a 0%, #e63e21 100%);
+  }
+  .bg-g-circle {
+    background-size: 10px 10px;
+    background-image: radial-gradient(circle,  #FF0000 0.2px, rgba(0, 0, 0, 0) 1px);
+  }
+  .bg-g-square {
+    background-size: 10px 15px;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0.1) 0.5px, transparent 1px), linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+  }
 }

@@ -6,29 +6,13 @@ const defaultTheme = require('tailwindcss/defaultTheme');
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Fira Code"', '"Fira Code"', ...defaultTheme.fontFamily.sans],
-        // sans: ['"Sniglet"', '"Fira Code"', ...defaultTheme.fontFamily.sans],
+        sans: ['"Poppins"', '"sans"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: {
-          light: '#D6C0B3', // Blue for light mode
-          dark: '#D6C0B3', // Darker blue for dark mode
-        },
-        secondary: {
-          light: '#493628', // White background for light mode
-          dark: '#AB886D', // Dark slate background for dark mode
-        },
-        tertiary: {
-          light: '#DF7212',
-          dark: '#DF7212',
-        },
-        background: {
-          light: '#E4E0E1', // White background for light mode
-          dark: '#493628', // Dark slate background for dark mode
-        },
-        text: {
-          light: '#AB886D', // Gray text for light mode
-          dark: '#E4E0E1', // Off-white text for dark mode
+        accent: {
+          primary: '#E63E21',
+          secondary: '#193f4a',
+          black: '#1B1B1B',
         },
       },
     },
@@ -36,4 +20,4 @@ const defaultTheme = require('tailwindcss/defaultTheme');
   plugins: [],
 };
 
-//linear-gradient(rgba(31, 31, 31, 0.25) 0%, rgba(18, 18, 18, 0.41) 100%)
+//linear-gradient(#DF7212 20%,#1B1B1B 100%)
