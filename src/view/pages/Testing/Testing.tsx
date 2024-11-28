@@ -1,4 +1,26 @@
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
+
+const TronBackground = () => {
+  const { scrollY } = useScroll();
+
+  const skyY = useTransform(scrollY, [0, 1000], [0, -50]);
+  const gridY = useTransform(scrollY, [0, 1000], [0, 50]);
+  const towerY = useTransform(scrollY, [0, 1000], [0, -30]);
+
+  return (
+    <div className='relative h-[200vh] w-screen bg-black overflow-hidden'>
+      {/* Sky */}
+      {/* <motion.div style={{ y: skyY }} className='sky'></motion.div> */}
+      <motion.div style={{ y: skyY }} className='sky rounded-2xl'></motion.div>
+
+      {/* Tower */}
+      <motion.div style={{ y: towerY }} className='tower'></motion.div>
+
+      {/* Grid */}
+      <motion.div style={{ y: gridY }} className='gridT'></motion.div>
+    </div>
+  );
+};
 
 const TronSvg = () => (
   <svg
@@ -71,11 +93,14 @@ const TronBorder = () => (
 
 export const Testing = () => (
   <>
-    <div className='min-h-screen w-screen bg-black flex justify-center items-center'>
+    {/* <div className='min-h-screen w-screen bg-black flex justify-center items-center'>
       <TronBorder />
     </div>
     <div className='min-h-screen w-screen bg-black flex justify-center items-center'>
       <TronSvg />
+    </div> */}
+    <div className='min-h-screen w-screen bg-white flex justify-center items-center'>
+      <TronBackground />
     </div>
   </>
 );
