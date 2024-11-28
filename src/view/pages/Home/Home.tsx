@@ -1,5 +1,4 @@
 import { Container } from '@/view/components';
-import myself from '@/assets/meBlackANdWhitwe.jpeg';
 
 export const Home = () => (
   <div className='relative grid grid-cols-12 gap-4 grid-rows-'>
@@ -14,15 +13,15 @@ export const Home = () => (
     >
       <div className='p-[5%]'>
         <h1 className='text-3xl md:text-2xl lg:text-2xl text-white'>
-          Hi, I am <span className='text-red-600'>Bernardo</span>
+          Hi, I am <span className='text-red-600 text-4xl'>Bernardo</span>
         </h1>
-        <h3 className='text-2xl md:text-4xl lg:text-8xl text-white'>
+        <h3 className='text-2xl md:text-4xl lg:text-4xl text-white'>
           FullStack Developer
         </h3>
       </div>
     </Container>
 
-    <Container
+    {/* <Container
       className={`
         hidden
         md:grid
@@ -48,6 +47,6 @@ export const Home = () => (
         md:mt-[15px]
         md:mb-[10px]
     min-h-[100%] min-w-[100%]'
-    />
+    /> */}
   </div>
 );
