@@ -62,4 +62,36 @@
 
 .neon-button:hover {
   box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
-}}
+}
+
+.tron-border {
+  position: relative;
+  display: inline-block;
+  padding: 20px 40px;
+  color: white;
+  font-size: 20px;
+  background: #0a0f14;
+  border: 2px solid transparent;
+  border-image-source: linear-gradient(90deg, transparent, transparent);
+  border-image-slice: 1;
+  animation: tron-sequential-fill 3s ease-out infinite;
+}
+
+.tron-border:hover {
+  box-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff, 0 0 60px #ff4d00;
+  animation: none; /* Optional: pause pulsing animation */
+}
+
+@keyframes tron-sequential-fill {
+  0% {
+    border-image-source: linear-gradient(90deg, transparent, transparent);
+  }
+  50% {
+    border-image-source: linear-gradient(90deg, #00d9ff, transparent);
+  }
+  100% {
+    border-image-source: linear-gradient(90deg, #00d9ff, #ff4d00);
+  }
+}
+
+}
