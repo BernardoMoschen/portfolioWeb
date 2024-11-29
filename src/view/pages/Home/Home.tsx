@@ -1,6 +1,6 @@
 import { Icon } from '@/view/components';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 
 interface AudienceBrief {
   audience: string;
@@ -29,7 +29,7 @@ const briefList: AudienceBrief[] = [
   },
 ];
 
-export const Hero = () => {
+export const Hero: FC = () => {
   const [selectedBrief, setSelectedBrief] = useState(briefList[0]);
 
   return (
@@ -73,7 +73,8 @@ export const Hero = () => {
     </section>
   );
 };
-const CTASection: React.FC = () => (
+
+const CTASection: FC = () => (
   <section className='flex flex-row justify-start mt-4 p-2'>
     <motion.div className='' initial='hidden' animate='visible'>
       <div className='gap-4 flex flex-col'>
@@ -109,7 +110,16 @@ const CTASection: React.FC = () => (
   </section>
 );
 
-export const Home = () => (
+
+export const About = () => {
+  const a = 'a'
+  return (
+    <div>Home</div>
+  )
+}
+
+
+export const Home: FC = () => (
   <>
     <Hero />
     {/* <CTASection /> */}
