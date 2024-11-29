@@ -40,8 +40,10 @@ export const Hero: FC = () => {
             <li
               key={brief.audience}
               onClick={() => setSelectedBrief(brief)}
-              className={`relative cursor-pointer hover:opacity-100 ${
-                selectedBrief === brief ? ['opacity-100 bold'] : 'opacity-75'
+              className={`relative cursor-pointer hover:opacity-100  ${
+                selectedBrief === brief
+                  ? ['opacity-100 font-semibold']
+                  : 'opacity-75'
               }`}
             >
               {`${brief.audience}`}
@@ -54,17 +56,19 @@ export const Hero: FC = () => {
             </li>
           ))}
         </ul>
-        <div>
+        <div className='p-2  bg-tron-linear rounded-e-full h-full'>
           <AnimatePresence mode='wait'>
             <motion.div
               key={selectedBrief ? selectedBrief.audience : 'empty'}
-              initial={{ y: 10, opacity: 0 }}
+              initial={{ y: 15, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
+              exit={{ y: -15, opacity: 0 }}
               transition={{ duration: 0.2 }}
               className='text-4xl text-start h-full w-full tracking-tights'
             >
-              {selectedBrief ? selectedBrief.brief : ''}
+              {selectedBrief?.brief.split('').map((c) => (
+                <motion.span>{c}</motion.span>
+              ))}
             </motion.div>
           </AnimatePresence>
         </div>
@@ -97,7 +101,7 @@ const CTASection: FC = () => (
             <Icon className='h-6 w-6' icon='Github' />
           </a>
           <a
-            href='https://github.com/BernardoMoschen'
+            href='https://www.linkedin.com/in/bernardomoschen/'
             target='_blank'
             rel='noopener noreferrer'
             className='bg-tron-linear p-1 rounded-lg'
@@ -110,18 +114,15 @@ const CTASection: FC = () => (
   </section>
 );
 
-
 export const About = () => {
-  const a = 'a'
-  return (
-    <div>Home</div>
-  )
-}
-
+  const a = 'a';
+  return <div className='h-screen tron-grid-blue '></div>;
+};
 
 export const Home: FC = () => (
   <>
     <Hero />
+    <About />
     {/* <CTASection /> */}
   </>
 );
