@@ -12,6 +12,10 @@
 }
 
 @layer utilities {
+  .bg-tron-linear {
+     background: linear-gradient(rgba(10, 15, 20) 40%, rgba(0, 61, 76, 0.5) 100%)
+  }
+
   .bg-g-primary {
     background: linear-gradient(to right, #193f4a 0%, #e63e21 100%);
   }

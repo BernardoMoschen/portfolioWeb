@@ -46,7 +46,7 @@ function AuroraBackground({ children }: Props) {
 
 export const Container = ({ children, className }: Props) => (
   <div
-    className={'bg-accent-black border-2 border-accent-surface rounded-[30px] h-fit w-fit'.concat(
+    className={'bg-accent-black border-2 border-accent-secondary rounded-[30px] h-fit w-fit'.concat(
       ` ${className}`
     )}
     style={{

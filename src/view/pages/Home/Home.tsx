@@ -1,8 +1,8 @@
-import { Container } from '@/view/components';
-
+import { Container, Icon } from '@/view/components';
+import { motion } from 'framer-motion';
 
 export const Hero = () => (
-  <div className='relative grid grid-cols-12 gap-4 grid-rows-'>
+  <section className='relative grid grid-cols-12 gap-4 grid-rows-'>
     <Container
       className='
         col-span-full
@@ -21,11 +21,48 @@ export const Hero = () => (
         </h3>
       </div>
     </Container>
-  </div>
+  </section>
+);
+
+const CTASection: React.FC = () => (
+  <section className='flex flex-row justify-start mt-4'>
+    <motion.div className='' initial='hidden' animate='visible'>
+      <div className='gap-4 flex flex-col'>
+        <div className='gap-x-4 flex'>
+          <button className='bg-tron-linear text-white border-2 py-1 px-4 rounded-[20px]  '>
+            Contact me
+          </button>
+          <button className='bg-tron-linear text-white border-2 py-1 px-4 rounded-[20px]  '>
+            More about me
+          </button>
+        </div>
+        <div className='flex flex-row gap-x-2 items-center'>
+          <p className='pr-2'>Find me at</p>
+          <a
+            href='https://github.com/BernardoMoschen'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='bg-tron-linear p-1 rounded-lg'
+          >
+            <Icon className='h-6 w-6' icon='Github' />
+          </a>
+          <a
+            href='https://github.com/BernardoMoschen'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='bg-tron-linear p-1 rounded-lg'
+          >
+            <Icon className='h-6 w-6 text-white' icon='LinkedIn' />
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  </section>
 );
 
 export const Home = () => (
   <>
     <Hero />
+    <CTASection />
   </>
 );
