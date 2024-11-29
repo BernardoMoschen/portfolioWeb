@@ -1,4 +1,6 @@
 import { Icon } from '@/view/components';
+import { FuzzyOverlayExample } from '@/view/components/animated/Overlay';
+import { TiltCard } from '@/view/components/animated/TiltCard';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FC, useState } from 'react';
 
@@ -116,7 +118,8 @@ const CTASection: FC = () => (
 
 export const About = () => {
   const a = 'a';
-  return <div className='h-screen tron-grid-blue '></div>;
+  console.log(a);
+  return <FuzzyOverlayExample />;
 };
 
 export const Home: FC = () => (
