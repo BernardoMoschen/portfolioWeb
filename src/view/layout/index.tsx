@@ -8,7 +8,8 @@ export default function Layout() {
   return (
     <ReactLenis root>
       <motion.div
-        className='bg-[#161616]'
+        className='bg-tron-background'
+        // className='bg-[#161616]'
         initial={{
           filter: 'blur(4px)',
         }}

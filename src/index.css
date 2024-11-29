@@ -33,17 +33,7 @@
       linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
   }
 
-  .neon {
-    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
-  }
-
-  .perspective {
-    perspective: 1000px;
-  }
-  .transform-3d {
-    transform: rotateY(20deg) rotateX(10deg);
-  }
-  .neon-grid {
+  .tron-grid-blue {
     background: repeating-linear-gradient(
       0deg,
       rgba(0, 255, 255, 0.2) 0,
@@ -53,108 +43,105 @@
     );
   }
 
-  .neon-glow {
-    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 80px #00ffff;
-  }
-  .neon-input:focus {
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
-}
-
-.neon-button:hover {
-  box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
-}
-
-.tron-border {
-  position: relative;
-  display: inline-block;
-  padding: 20px 40px;
-  color: white;
-  font-size: 20px;
-  background: #0a0f14;
-  border: 2px solid transparent;
-  border-image-source: linear-gradient(90deg, transparent, transparent);
-  border-image-slice: 1;
-  animation: tron-sequential-fill 3s ease-out infinite;
-}
-
-.tron-border:hover {
-  box-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff, 0 0 60px #ff4d00;
-  animation: none; /* Optional: pause pulsing animation */
-}
-
-@keyframes tron-sequential-fill {
-  0% {
+  .tron-border {
+    position: relative;
+    display: inline-block;
+    padding: 20px 40px;
+    color: white;
+    font-size: 20px;
+    background: #0a0f14;
+    border: 2px solid transparent;
     border-image-source: linear-gradient(90deg, transparent, transparent);
+    border-image-slice: 1;
+    animation: tron-sequential-fill 3s ease-out infinite;
   }
-  50% {
-    border-image-source: linear-gradient(90deg, #00d9ff, transparent);
+
+  .tron-border:hover {
+    box-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff, 0 0 60px #ff4d00;
+    animation: none; /* Optional: pause pulsing animation */
   }
-  100% {
-    border-image-source: linear-gradient(90deg, #00d9ff, #ff4d00);
+
+  @keyframes tron-sequential-fill {
+    0% {
+      border-image-source: linear-gradient(90deg, transparent, transparent);
+    }
+    50% {
+      border-image-source: linear-gradient(90deg, #00d9ff, transparent);
+    }
+    100% {
+      border-image-source: linear-gradient(90deg, #00d9ff, #ff4d00);
+    }
   }
-}
 
-
-.gridT {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50vh;
-  background: radial-gradient(circle at center, transparent, #00d9ff 80%);
-  background-size: 50px 50px;
-  mask-image: linear-gradient(to top, black, transparent);
-  overflow: hidden;
-}
-
-.gridT::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(to right, transparent, rgba(0, 217, 255, 0.3) 1px, transparent),
-    linear-gradient(to bottom, transparent, rgba(0, 217, 255, 0.3) 1px, transparent);
-  background-size: 50px 50px;
-  mix-blend-mode: lighten;
-}
-
-.sky {
-  position: absolute;
-  top: 0;
-  width: 200%;
-  height: 60vh;
-  background: linear-gradient(
-    to right,
-    rgba(0, 19, 26, 0.9),
-    rgba(10, 15, 20, 0.7),
-    rgba(0, 19, 26, 0.9)
-  );
-  opacity: 0.7;
-  filter: blur(20px);
-  animation: move-clouds 15s linear infinite;
-}
-
-/* Animation to move the sky */
-@keyframes move-clouds {
-  0% {
-    transform: translateX(0);
+  /* .gridT {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50vh;
+    background: radial-gradient(circle at center, transparent, #00d9ff 80%);
+    background-size: 50px 50px;
+    mask-image: linear-gradient(to top, black, transparent);
+    overflow: hidden;
   }
-  100% {
+
+  .gridT::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to right,
+        transparent,
+        rgba(0, 217, 255, 0.3) 1px,
+        transparent
+      ),
+      linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 217, 255, 0.3) 1px,
+        transparent
+      );
+    background-size: 50px 50px;
+    mix-blend-mode: lighten;
+  }
+
+  .sky {
+    position: absolute;
+    top: 0;
+    width: 200%;
+    height: 60vh;
+    background: linear-gradient(
+      to right,
+      rgba(0, 19, 26, 0.9),
+      rgba(10, 15, 20, 0.7),
+      rgba(0, 19, 26, 0.9)
+    );
+    opacity: 0.7;
+    filter: blur(20px);
+    animation: move-clouds 15s linear infinite;
+  }
+
+  /* Animation to move the sky */
+  /* @keyframes move-clouds {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .tower {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
     transform: translateX(-50%);
-  }
-}
-
-.tower {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 200px;
-  background: linear-gradient(to top, #00d9ff, #0a0f14);
-  box-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff;
-}
-
+    width: 50px;
+    height: 200px;
+    background: linear-gradient(to top, #00d9ff, #0a0f14);
+    box-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff; 
+  } */
+  
 }
