@@ -1,31 +1,80 @@
-import { Container, Icon } from '@/view/components';
-import { motion } from 'framer-motion';
+import { Icon } from '@/view/components';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
-export const Hero = () => (
-  <section className='relative grid grid-cols-12 gap-4 grid-rows-'>
-    <Container
-      className='
-        col-span-full
-        md:col-span-12
-        row-span-1
-        md:row-span-full
-        min-h-[100%]
-        min-w-[100%]'
-    >
-      <div className='p-[5%]'>
-        <h1 className='text-3xl md:text-2xl lg:text-2xl text-white'>
-          Hi, I am <span className='text-red-600 text-4xl'>Bernardo</span>
-        </h1>
-        <h3 className='text-2xl md:text-4xl lg:text-4xl text-white'>
-          FullStack Developer
-        </h3>
+interface AudienceBrief {
+  audience: string;
+  brief: string;
+}
+const briefList: AudienceBrief[] = [
+  {
+    audience: 'For anyone',
+    brief:
+      'I design and develop scalable, user-focused applications that solve real-world problems. Whether it’s a sleek web platform or a complex backend system, I bring ideas to life with precision and care.',
+  },
+  {
+    audience: 'Recruiters',
+    brief:
+      'I’m a full-stack developer with a proven track record in building reliable, scalable solutions. With expertise in modern technologies and a commitment to clean code, I deliver results that drive business success."',
+  },
+  {
+    audience: 'Product Managers',
+    brief:
+      'I bring end-to-end technical expertise to support your product journey, from discovery to delivery. I’ll collaborate closely to align technical execution with your product vision, maximizing impact at every stage.',
+  },
+  {
+    audience: 'Engineers',
+    brief:
+      'I’m a developer who values efficiency, maintainability, and collaboration. I write clean, scalable code, optimize performance, and contribute to a strong engineering culture by sharing knowledge and solving challenges together.',
+  },
+];
+
+export const Hero = () => {
+  const [selectedBrief, setSelectedBrief] = useState(briefList[0]);
+
+  return (
+    <section className='flex flex-col relative min-h-[90%] justify-between'>
+      <div className='flex flex-col gap-y-4'>
+        <ul className='flex flex-row gap-4 select-none relative list-none'>
+          {briefList.map((brief) => (
+            <li
+              key={brief.audience}
+              onClick={() => setSelectedBrief(brief)}
+              className={`relative cursor-pointer hover:opacity-100 ${
+                selectedBrief === brief ? ['opacity-100 bold'] : 'opacity-75'
+              }`}
+            >
+              {`${brief.audience}`}
+              {brief === selectedBrief ? (
+                <motion.div
+                  className='absolute bottom-[-1px] left-0 right-0 h-[1px] bg-white '
+                  layoutId='underline'
+                />
+              ) : null}
+            </li>
+          ))}
+        </ul>
+        <div>
+          <AnimatePresence mode='wait'>
+            <motion.div
+              key={selectedBrief ? selectedBrief.audience : 'empty'}
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -10, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className='text-4xl text-start h-full w-full tracking-tights'
+            >
+              {selectedBrief ? selectedBrief.brief : ''}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
-    </Container>
-  </section>
-);
-
+      <CTASection />
+    </section>
+  );
+};
 const CTASection: React.FC = () => (
-  <section className='flex flex-row justify-start mt-4'>
+  <section className='flex flex-row justify-start mt-4 p-2'>
     <motion.div className='' initial='hidden' animate='visible'>
       <div className='gap-4 flex flex-col'>
         <div className='gap-x-4 flex'>
@@ -63,6 +112,6 @@ const CTASection: React.FC = () => (
 export const Home = () => (
   <>
     <Hero />
-    <CTASection />
+    {/* <CTASection /> */}
   </>
 );

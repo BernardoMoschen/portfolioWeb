@@ -27,6 +27,7 @@
       rgba(0, 0, 0, 0) 1px
     );
   }
+
   .bg-g-square {
     background-size: 10px 15px;
     background-image: linear-gradient(

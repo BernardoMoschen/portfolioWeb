@@ -23,7 +23,7 @@ export default function Layout() {
       >
         <div className='h-svh w-full text-white'>
           <Navbar />
-          <div className='p-4 h-full w-full'>
+          <div className='py-[5%] px-[5%] h-full w-full'>
             <Outlet />
           </div>
         </div>
