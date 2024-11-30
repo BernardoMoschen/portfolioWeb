@@ -1,8 +1,7 @@
-import { Icon } from '@/view/components';
-import { FuzzyOverlayExample } from '@/view/components/animated/Overlay';
-import { TiltCard } from '@/view/components/animated/TiltCard';
-import { AnimatePresence, motion } from 'framer-motion';
-import { FC, useState } from 'react';
+import { Icon, VelocityText } from '@/view/components';
+import { FuzzyOverlay } from '@/view/components/animated/Overlay';
+import { AnimatePresence, motion, useScroll } from 'framer-motion';
+import { FC, useRef, useState } from 'react';
 
 interface AudienceBrief {
   audience: string;
@@ -31,9 +30,63 @@ const briefList: AudienceBrief[] = [
   },
 ];
 
-export const Hero: FC = () => {
-  const [selectedBrief, setSelectedBrief] = useState(briefList[0]);
+export const Hero: FC = () => (
+  <>
+    <header className='w-screen h-screen relative overflow-hidden'>
+      <div className='flex flex-col items-center mb-9 text-tron-mutedBlue'>
+        <h6 className='text-sm uppercase tracking-wider'>Bernardo Moschen</h6>
+        <div className='flex flex-col items-center text-8xl uppercase tracking-tighter '>
+          <p>Empowering</p>
+          <p className='text-accent-primary'>dreams</p>
+          <p>since</p>
+          <p>2020</p>
+        </div>
+        {/* Debugging nightmares since 2018 */}
+      </div>
+      <CTASection />
+      <FuzzyOverlay />
+    </header>
+  </>
+);
 
+const CTASection: FC = () => (
+  <section className='flex flex-row justify-start mt-4 p-2'>
+    <motion.div className='' initial='hidden' animate='visible'>
+      <div className='gap-4 flex flex-col'>
+        <div className='gap-x-4 flex'>
+          <button className='bg-tron-linear text-white border-2 py-1 px-4 rounded-[20px]  '>
+            Contact me
+          </button>
+          <button className='bg-tron-linear text-white border-2 py-1 px-4 rounded-[20px]  '>
+            More about me
+          </button>
+        </div>
+        <div className='flex flex-row gap-x-2 items-center'>
+          <p className='pr-2'>Find me at</p>
+          <a
+            href='https://github.com/BernardoMoschen'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='bg-tron-linear p-1 rounded-lg'
+          >
+            <Icon className='h-6 w-6' icon='Github' />
+          </a>
+          <a
+            href='https://www.linkedin.com/in/bernardomoschen/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='bg-tron-linear p-1 rounded-lg'
+          >
+            <Icon className='h-6 w-6 text-white' icon='LinkedIn' />
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  </section>
+);
+
+export const About = () => {
+  const [selectedBrief, setSelectedBrief] = useState(briefList[0]);
   return (
     <section className='flex flex-col relative min-h-[90%] justify-between'>
       <div className='flex flex-col gap-y-4'>
@@ -75,57 +128,27 @@ export const Hero: FC = () => {
           </AnimatePresence>
         </div>
       </div>
-      <CTASection />
     </section>
   );
 };
 
-const CTASection: FC = () => (
-  <section className='flex flex-row justify-start mt-4 p-2'>
-    <motion.div className='' initial='hidden' animate='visible'>
-      <div className='gap-4 flex flex-col'>
-        <div className='gap-x-4 flex'>
-          <button className='bg-tron-linear text-white border-2 py-1 px-4 rounded-[20px]  '>
-            Contact me
-          </button>
-          <button className='bg-tron-linear text-white border-2 py-1 px-4 rounded-[20px]  '>
-            More about me
-          </button>
-        </div>
-        <div className='flex flex-row gap-x-2 items-center'>
-          <p className='pr-2'>Find me at</p>
-          <a
-            href='https://github.com/BernardoMoschen'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='bg-tron-linear p-1 rounded-lg'
-          >
-            <Icon className='h-6 w-6' icon='Github' />
-          </a>
-          <a
-            href='https://www.linkedin.com/in/bernardomoschen/'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='bg-tron-linear p-1 rounded-lg'
-          >
-            <Icon className='h-6 w-6 text-white' icon='LinkedIn' />
-          </a>
-        </div>
+export const Home: FC = () => {
+  const headline = 'Dream it. Build it. Scale it.';
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ['center center', 'center end'],
+  });
+  return (
+    <div>
+      <div ref={targetRef}>
+        <Hero />
       </div>
-    </motion.div>
-  </section>
-);
-
-export const About = () => {
-  const a = 'a';
-  console.log(a);
-  return <FuzzyOverlayExample />;
+      <About />
+      <>
+        <div className='h-screen bg-yellow-200'></div>
+        <VelocityText scrollProgress={scrollYProgress}>{headline}</VelocityText>
+      </>
+    </div>
+  );
 };
-
-export const Home: FC = () => (
-  <>
-    <Hero />
-    <About />
-    {/* <CTASection /> */}
-  </>
-);

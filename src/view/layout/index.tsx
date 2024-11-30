@@ -23,7 +23,11 @@ export default function Layout() {
       >
         <div className='h-full w-full text-white'>
           <Navbar />
-          <div className='py-[5%] px-[5%] h-full w-full'>
+          {/* py-[5%] px-[5%] */}
+          <div
+            className='
+           h-full w-full'
+          >
             <Outlet />
           </div>
         </div>

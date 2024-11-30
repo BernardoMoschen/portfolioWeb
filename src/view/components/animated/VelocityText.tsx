@@ -1,25 +1,19 @@
 import {
   motion,
-  useScroll,
   useVelocity,
   useTransform,
   useSpring,
-} from 'framer-motion';
-import { FC, ReactNode, useRef } from 'react';
+  MotionValue,
+} from 'motion/react';
+import { FC, ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
+  scrollProgress: MotionValue<number>;
 }
 
-export const VelocityText: FC<Props> = ({ children }) => {
-  const targetRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const scrollVelocity = useVelocity(scrollYProgress);
+export const VelocityText: FC<Props> = ({ children, scrollProgress }) => {
+  const scrollVelocity = useVelocity(scrollProgress);
 
   const skewXRaw = useTransform(
     scrollVelocity,
@@ -28,22 +22,17 @@ export const VelocityText: FC<Props> = ({ children }) => {
   );
   const skewX = useSpring(skewXRaw, { mass: 3, stiffness: 400, damping: 50 });
 
-  const xRaw = useTransform(scrollYProgress, [0, 1], [0, -4000]);
+  const xRaw = useTransform(scrollProgress, [0, 1], [0, -4000]);
   const x = useSpring(xRaw, { mass: 3, stiffness: 400, damping: 50 });
 
   return (
-    <section
-      ref={targetRef}
-      className='h-[1000vh] bg-neutral-50 text-neutral-950'
-    >
-      <div className='sticky top-0 flex h-screen items-center overflow-hidden'>
-        <motion.p
-          style={{ skewX, x }}
-          className='origin-bottom-left whitespace-nowrap text-5xl font-black uppercase leading-[0.85] md:text-7xl md:leading-[0.85]'
-        >
-          {children}
-        </motion.p>
-      </div>
-    </section>
+    <div className='text-white sticky top-0 flex items-center overflow-hidden'>
+      <motion.p
+        style={{ skewX, x }}
+        className='origin-bottom-left whitespace-nowrap text-5xl font-black uppercase leading-[0.85] md:text-7xl md:leading-[0.85]'
+      >
+        {children}
+      </motion.p>
+    </div>
   );
 };
