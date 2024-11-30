@@ -32,9 +32,11 @@ const briefList: AudienceBrief[] = [
 
 export const Hero: FC = () => (
   <>
-    <header className='w-screen h-screen relative overflow-hidden'>
-      <div className='flex flex-col items-center mb-9 text-tron-mutedBlue'>
-        <h6 className='text-sm uppercase tracking-wider'>Bernardo Moschen</h6>
+    <header className='w-screen h-screen relative overflow-hidden '>
+      <div className='flex h-full flex-col items-center justify-center mb-9 text-tron-mutedBlue'>
+        <h6 className='text-sm uppercase tracking-wider m-8'>
+          Bernardo Moschen
+        </h6>
         <div className='flex flex-col items-center text-8xl uppercase tracking-tighter '>
           <p>Empowering</p>
           <p className='text-accent-primary'>dreams</p>
@@ -140,7 +142,7 @@ export const Home: FC = () => {
     offset: ['center center', 'center end'],
   });
   return (
-    <div>
+    <div className='h-full'>
       <div ref={targetRef}>
         <Hero />
       </div>
