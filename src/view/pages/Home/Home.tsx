@@ -1,4 +1,4 @@
-import { Icon, VelocityText } from '@/view/components';
+import { Icon } from '@/view/components';
 import { FuzzyOverlay } from '@/view/components/animated/Overlay';
 import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import { FC, useRef, useState } from 'react';
@@ -33,7 +33,7 @@ const briefList: AudienceBrief[] = [
 export const Hero: FC = () => (
   <>
     <header className='w-screen h-screen relative overflow-hidden '>
-      <div className='flex h-full flex-col items-center justify-center mb-9 text-tron-mutedBlue'>
+      <div className='flex h-full flex-col items-center justify-center text-tron-mutedBlue'>
         <h6 className='text-sm uppercase tracking-wider m-8'>
           Bernardo Moschen
         </h6>
@@ -45,14 +45,13 @@ export const Hero: FC = () => (
         </div>
         {/* Debugging nightmares since 2018 */}
       </div>
-      <CTASection />
       <FuzzyOverlay />
     </header>
   </>
 );
 
 const CTASection: FC = () => (
-  <section className='flex flex-row justify-start mt-4 p-2'>
+  <section className='flex flex-row justify-start mt-4 p-2 z-20'>
     <motion.div className='' initial='hidden' animate='visible'>
       <div className='gap-4 flex flex-col'>
         <div className='gap-x-4 flex'>
@@ -90,8 +89,9 @@ const CTASection: FC = () => (
 export const About = () => {
   const [selectedBrief, setSelectedBrief] = useState(briefList[0]);
   return (
-    <section className='flex flex-col relative min-h-[90%] justify-between'>
-      <div className='flex flex-col gap-y-4'>
+    <section className='h-screen grid grid-rows-12'>
+      <div className='flex flex-col gap-y-4 mx-auto row-start-4'>
+        <p className='text-sm tracking-[0.5em] uppercase'>About me</p>
         <ul className='flex flex-row gap-4 select-none relative list-none'>
           {briefList.map((brief) => (
             <li
@@ -113,7 +113,7 @@ export const About = () => {
             </li>
           ))}
         </ul>
-        <div className='p-2  bg-tron-linear rounded-e-full h-full'>
+        <div className='p-2 min-h-full max-w-4xl'>
           <AnimatePresence mode='wait'>
             <motion.div
               key={selectedBrief ? selectedBrief.audience : 'empty'}
@@ -121,11 +121,9 @@ export const About = () => {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -15, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className='text-4xl text-start h-full w-full tracking-tights'
+              className='text-4xl text-start h-full w-full tracking-tight'
             >
-              {selectedBrief?.brief.split('').map((c) => (
-                <motion.span>{c}</motion.span>
-              ))}
+              {selectedBrief?.brief}
             </motion.div>
           </AnimatePresence>
         </div>
@@ -141,16 +139,12 @@ export const Home: FC = () => {
     target: targetRef,
     offset: ['center center', 'center end'],
   });
+  console.log(headline, scrollYProgress);
+
   return (
-    <div className='h-full'>
-      <div ref={targetRef}>
-        <Hero />
-      </div>
+    <>
+      <Hero />
       <About />
-      <>
-        <div className='h-screen bg-yellow-200'></div>
-        <VelocityText scrollProgress={scrollYProgress}>{headline}</VelocityText>
-      </>
-    </div>
+    </>
   );
 };

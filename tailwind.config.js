@@ -17,8 +17,10 @@ const defaultTheme = require('tailwindcss/defaultTheme');
         },
         tron: {
           // Main background
+          // #0a0f14
           background: 'rgba(10, 15, 20)',
           // Buttons, links, highlights, and interactive elements.
+          // #00d9ffd9
           electricBlue: 'rgba(0, 217, 255)',
           // Alerts, secondary highlights, or complementary calls to action.
           neonOrange: 'rgba(255, 77, 0)',
@@ -27,6 +29,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
           // Subheadings, captions, or explanatory text.
           mutedBlue: 'rgba(166, 207, 216)',
           // Borders, lines, or subtle grid patterns
+          // #003d4c
           darkDivider: 'rgba(0, 61, 76)',
         },
       },
