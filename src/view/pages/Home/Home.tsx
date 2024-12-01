@@ -4,6 +4,7 @@ import {
   Icon,
   ProgressText,
 } from '@/view/components';
+import { Counter } from '@/view/components/animated/text/Counter';
 import FallingText from '@/view/components/animated/text/FallingText';
 import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import { FC, useRef, useState } from 'react';
@@ -158,7 +159,9 @@ export const About = () => {
 
 export const Tech: FC = () => (
   <>
-    <header className='w-screen h-screen relative overflow-hidden '></header>
+    <header className='w-screen h-screen relative overflow-hidden '>
+      <Counter from={0} to={999} />
+    </header>
   </>
 );
 
