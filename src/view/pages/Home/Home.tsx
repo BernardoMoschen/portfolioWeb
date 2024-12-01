@@ -1,4 +1,4 @@
-import { Icon } from '@/view/components';
+import { BubbleText, Icon } from '@/view/components';
 import { FuzzyOverlay } from '@/view/components/animated/background/Overlay';
 import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import { FC, useRef, useState } from 'react';
@@ -39,7 +39,7 @@ export const Hero: FC = () => (
         </h6>
         <div className='flex flex-col items-center text-8xl uppercase tracking-tighter  text-tron-beige'>
           <p>Empowering</p>
-          <p className='text-tron-secondary font-Protest'>dreams</p>
+          <BubbleText>dreams</BubbleText>
           <p>since</p>
           <p>2020</p>
         </div>

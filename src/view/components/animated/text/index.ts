@@ -1,4 +1,4 @@
-export * from './BubbleText';
+export * from './BubbleText/BubbleText';
 export * from './FallingText';
 export * from './FlipText';
 export * from './ProgressText';
