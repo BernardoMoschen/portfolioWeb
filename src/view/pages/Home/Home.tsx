@@ -1,5 +1,5 @@
 import { Icon } from '@/view/components';
-import { FuzzyOverlay } from '@/view/components/animated/Overlay';
+import { FuzzyOverlay } from '@/view/components/animated/background/Overlay';
 import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import { FC, useRef, useState } from 'react';
 

@@ -3,10 +3,11 @@ import styles from './bubble.module.css';
 
 interface Props {
   children: string;
+  bubbleColor: string;
 }
 
-export const BubbleText: FC<Props> = ({ children }) => (
-  <h2 className='text-center text-5xl font-thin text-indigo-300'>
+export const BubbleText: FC<Props> = ({ children, bubbleColor }) => (
+  <h2 className={`text-center text-5xl font-thin text-[${bubbleColor}]`}>
     {children.split('').map((child, idx) => (
       <span className={styles.hoverText} key={idx}>
         {child}
