@@ -19,11 +19,11 @@ function ProgressParagraph({ children }: ProgressParagraph) {
   const pElement = useRef<HTMLParagraphElement>(null);
   const { scrollYProgress } = useScroll({
     target: pElement,
-    offset: ['start 0.9', 'start 0.25'],
+    offset: ['start 0.9', 'start 0.35'],
   });
 
   return (
-    <p className='flex flex-wrap p-4' ref={pElement}>
+    <p className='flex flex-wrap' ref={pElement}>
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;

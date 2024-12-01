@@ -1,5 +1,10 @@
-import { BubbleText, Icon } from '@/view/components';
-import { FuzzyOverlay } from '@/view/components/animated/background/Overlay';
+import {
+  AuroraBackground,
+  FlipText,
+  Icon,
+  ProgressText,
+} from '@/view/components';
+import FallingText from '@/view/components/animated/text/FallingText';
 import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import { FC, useRef, useState } from 'react';
 
@@ -32,21 +37,32 @@ const briefList: AudienceBrief[] = [
 
 export const Hero: FC = () => (
   <>
-    <header className='w-screen h-screen relative overflow-hidden '>
-      <div className='flex h-full flex-col items-center justify-center '>
-        <h6 className='text-sm uppercase tracking-wider m-2 text-tron-primary font-bold'>
-          Bernardo Moschen
-        </h6>
-        <div className='flex flex-col items-center text-8xl uppercase tracking-tighter  text-tron-beige'>
-          <p>Empowering</p>
-          <p className='text-tron-secondary font-Protest'>dreams</p>
-          <p>since</p>
-          <p>2020</p>
+    <AuroraBackground
+      // colorSet={['rgba(255, 77, 0)', '#FF9500', '#FFC56F', '#E6D5B8']}
+      colorSet={['#0a0f14', 'rgba(0, 61, 76)', '#008B8B', '#1A1A1A']}
+    >
+      <header className='w-screen h-screen relative overflow-hidden backdrop-blur-3xl'>
+        <div className='flex h-full flex-col items-center justify-center '>
+          <h6 className='text-sm uppercase tracking-wider m-2 text-tron-primary font-bold'>
+            Bernardo Moschen
+          </h6>
+          {/* <div className='flex flex-col items-center text-8xl uppercase tracking-tighter  text-tron-beige'>
+            <p>Empowering</p>
+            <p className='text-tron-secondary font-Protest'>dreams</p>
+            <p>since</p>
+            <p>2020</p>
+          </div> */}
+          {/* Debugging nightmares since 2018 */}
+          <div className='flex flex-col items-center text-8xl uppercase tracking-tighter  text-tron-beige'>
+            <p>Shipping</p>
+            <p className='text-tron-secondary font-Protest'>dreams</p>
+            <p>since</p>
+            <p>2020</p>
+          </div>
+          {/* Fixing broken stuff since 2009 */}
         </div>
-        {/* Debugging nightmares since 2018 */}
-      </div>
-      <FuzzyOverlay />
-    </header>
+      </header>
+    </AuroraBackground>
   </>
 );
 
@@ -89,45 +105,51 @@ const CTASection: FC = () => (
 export const About = () => {
   const [selectedBrief, setSelectedBrief] = useState(briefList[0]);
   return (
-    <section className='h-screen grid grid-rows-12'>
-      <div className='flex flex-col gap-y-4 mx-auto row-start-4'>
-        <p className='text-sm tracking-[0.5em] uppercase font-bold text-tron-secondary font-sans'>
+    <section className='h-[100vh] grid grid-rows-6'>
+      <div className='flex flex-col gap-y-6 mx-auto row-start-2'>
+        <p className='text-sm tracking-[0.5em] uppercase font-bold text-tron-primary '>
           About me
         </p>
-        <ul className='flex flex-row gap-4 select-none relative list-none'>
-          {briefList.map((brief) => (
-            <li
-              key={brief.audience}
-              onClick={() => setSelectedBrief(brief)}
-              className={`relative cursor-pointer hover:opacity-100 text-tron-amber ${
-                selectedBrief === brief
-                  ? ['opacity-100 font-semibold']
-                  : 'opacity-75'
-              }`}
-            >
-              {`${brief.audience}`}
-              {brief === selectedBrief ? (
-                <motion.div
-                  className='absolute bottom-[-1px] left-0 right-0 h-[1px] bg-tron-amber '
-                  layoutId='underline'
-                />
-              ) : null}
-            </li>
-          ))}
-        </ul>
-        <div className='p-2 min-h-full max-w-4xl'>
-          <AnimatePresence mode='wait'>
-            <motion.div
-              key={selectedBrief ? selectedBrief.audience : 'empty'}
-              initial={{ y: 15, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -15, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className='text-4xl text-start h-full w-full tracking-tight text-tron-beige'
-            >
-              {selectedBrief?.brief}
-            </motion.div>
-          </AnimatePresence>
+        <div>
+          <ul className='flex flex-row gap-4 select-none relative list-none'>
+            {briefList.map((brief) => (
+              <li
+                key={brief.audience}
+                onClick={() => setSelectedBrief(brief)}
+                className={`relative cursor-pointer hover:opacity-100 text-tron-${
+                  selectedBrief == brief ? 'primary' : 'secondary'
+                } ${
+                  selectedBrief === brief
+                    ? [
+                        'opacity-flex flex-col justify-center my-auto 100 font-semibold ',
+                      ]
+                    : 'opacity-75'
+                }`}
+              >
+                {`${brief.audience}`}
+                {brief === selectedBrief ? (
+                  <motion.div
+                    className='absolute bottom-[-1px] left-0 right-0 h-[1px] bg-tron-primary '
+                    layoutId='underline'
+                  />
+                ) : null}
+              </li>
+            ))}
+          </ul>
+          <div className='min-h-full max-w-4xl'>
+            <AnimatePresence mode='wait'>
+              <motion.div
+                key={selectedBrief ? selectedBrief.audience : 'empty'}
+                initial={{ y: 15, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -15, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className='text-4xl text-start h-full w-full tracking-tight text-tron-beige'
+              >
+                <ProgressText>{selectedBrief!.brief}</ProgressText>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>

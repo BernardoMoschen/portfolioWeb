@@ -33,7 +33,7 @@ const NavbarMenu = () => {
   return (
     <div className='grid grid-rows-1 grid-cols-4 gap-1 lg:gap-2 py-1 place-items-center '>
       {navLinks.map((link) => (
-        <div className='text-tron-secondary tracking-tighter '>{link}</div>
+        <div className='text-tron-primary tracking-tighter '>{link}</div>
       ))}
     </div>
   );
@@ -48,7 +48,7 @@ export default function NavbarBlur() {
 
   return (
     <motion.nav
-      className='w-full fixed top-0 bottom-auto left-0 right-0 backdrop-blur-sm z-[10000] flex  flex-col py-2'
+      className='w-full fixed top-0 bottom-auto left-0 right-0 backdrop-blur-sm  z-[10000] flex  flex-col py-2'
       variants={navbarVariants}
       initial='hidden'
       animate='visible'

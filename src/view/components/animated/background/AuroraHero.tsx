@@ -8,21 +8,22 @@ import { ReactNode, useEffect } from 'react';
 
 interface Props {
   children: ReactNode;
+  colorSet?: string[];
 }
 const colors = ['#13FFAA', '#1E67C6', '#CE84CF', '#DD335C'];
 
-export function AuroraBackground({ children }: Props) {
-  const color = useMotionValue(colors[0]);
-  const backgroundImage = useMotionTemplate`radial-gradient(115% 175% at 50% 0%, #020617 50%, ${color}`;
+export function AuroraBackground({ children, colorSet = colors }: Props) {
+  const color = useMotionValue(colorSet[0]);
+  const backgroundImage = useMotionTemplate`repeating-radial-gradient(90% 175% at 50% 0%, #020617 50%, ${color}`;
 
   useEffect(() => {
-    animate(color, colors, {
+    animate(color, colorSet, {
       ease: 'easeInOut',
       duration: 5,
       repeat: Infinity,
       repeatType: 'mirror',
     });
-  }, [color]);
+  }, [color, colorSet]);
 
   return (
     <motion.section
