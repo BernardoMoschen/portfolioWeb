@@ -12,7 +12,7 @@ const NavbarMobile = ({
 }) => (
   <div className='md:hidden w-7 h-7'>
     <button
-      className='text-white text-3xl'
+      className='text-tron-secondary text-3xl'
       onClick={() => setToggle(!isToggled)}
     >
       <Icon icon='MenuGrid' />
@@ -31,9 +31,9 @@ const NavbarLogo = () => (
 const NavbarMenu = () => {
   const navLinks = ['Home', 'About', 'Projects', 'Contact me'];
   return (
-    <div className='grid grid-rows-1 grid-cols-4 gap-1 lg:gap-10 py-1 place-items-center '>
+    <div className='grid grid-rows-1 grid-cols-4 gap-1 lg:gap-2 py-1 place-items-center '>
       {navLinks.map((link) => (
-        <div className='text-white text-sm md:text-lg'>{link}</div>
+        <div className='text-tron-secondary tracking-tighter '>{link}</div>
       ))}
     </div>
   );

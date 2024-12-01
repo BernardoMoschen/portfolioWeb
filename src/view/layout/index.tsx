@@ -7,7 +7,7 @@ import NavbarBlur from './NavbarBlur';
 export default function Layout() {
   return (
     <ReactLenis root>
-      <div className='h-full w-full text-white static overflow-visible bg-tron-background'>
+      <div className='h-full w-full  static overflow-visible '>
         <NavbarBlur />
         <motion.div
           className='bg-tron-background'

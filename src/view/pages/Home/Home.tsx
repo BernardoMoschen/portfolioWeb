@@ -33,13 +33,13 @@ const briefList: AudienceBrief[] = [
 export const Hero: FC = () => (
   <>
     <header className='w-screen h-screen relative overflow-hidden '>
-      <div className='flex h-full flex-col items-center justify-center text-tron-mutedBlue'>
-        <h6 className='text-sm uppercase tracking-wider m-8'>
+      <div className='flex h-full flex-col items-center justify-center '>
+        <h6 className='text-sm uppercase tracking-wider m-2 text-tron-primary font-bold'>
           Bernardo Moschen
         </h6>
-        <div className='flex flex-col items-center text-8xl uppercase tracking-tighter '>
+        <div className='flex flex-col items-center text-8xl uppercase tracking-tighter  text-tron-beige'>
           <p>Empowering</p>
-          <p className='text-accent-primary'>dreams</p>
+          <p className='text-tron-secondary font-Protest'>dreams</p>
           <p>since</p>
           <p>2020</p>
         </div>
@@ -91,13 +91,15 @@ export const About = () => {
   return (
     <section className='h-screen grid grid-rows-12'>
       <div className='flex flex-col gap-y-4 mx-auto row-start-4'>
-        <p className='text-sm tracking-[0.5em] uppercase'>About me</p>
+        <p className='text-sm tracking-[0.5em] uppercase font-bold text-tron-secondary font-sans'>
+          About me
+        </p>
         <ul className='flex flex-row gap-4 select-none relative list-none'>
           {briefList.map((brief) => (
             <li
               key={brief.audience}
               onClick={() => setSelectedBrief(brief)}
-              className={`relative cursor-pointer hover:opacity-100  ${
+              className={`relative cursor-pointer hover:opacity-100 text-tron-amber ${
                 selectedBrief === brief
                   ? ['opacity-100 font-semibold']
                   : 'opacity-75'
@@ -106,7 +108,7 @@ export const About = () => {
               {`${brief.audience}`}
               {brief === selectedBrief ? (
                 <motion.div
-                  className='absolute bottom-[-1px] left-0 right-0 h-[1px] bg-white '
+                  className='absolute bottom-[-1px] left-0 right-0 h-[1px] bg-tron-amber '
                   layoutId='underline'
                 />
               ) : null}
@@ -121,7 +123,7 @@ export const About = () => {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -15, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className='text-4xl text-start h-full w-full tracking-tight'
+              className='text-4xl text-start h-full w-full tracking-tight text-tron-beige'
             >
               {selectedBrief?.brief}
             </motion.div>
@@ -131,6 +133,12 @@ export const About = () => {
     </section>
   );
 };
+
+export const Tech: FC = () => (
+  <>
+    <header className='w-screen h-screen relative overflow-hidden '></header>
+  </>
+);
 
 export const Home: FC = () => {
   const headline = 'Dream it. Build it. Scale it.';
@@ -145,6 +153,7 @@ export const Home: FC = () => {
     <>
       <Hero />
       <About />
+      <Tech />
     </>
   );
 };

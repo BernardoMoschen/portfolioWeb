@@ -7,30 +7,35 @@ const defaultTheme = require('tailwindcss/defaultTheme');
     extend: {
       fontFamily: {
         sans: ['"Poppins"', '"sans"', ...defaultTheme.fontFamily.sans],
+        Protest: [
+          '"Protest Revolution"',
+          '"sans"',
+          ...defaultTheme.fontFamily.sans,
+        ],
+        Orbitron: ['"Orbitron"', '"sans"', ...defaultTheme.fontFamily.sans],
+        Doto: ['"Doto"', '"sans"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        accent: {
-          primary: '#E63E21',
-          secondary: '#193f4a',
-          black: '#1B1B1B',
-          surface: '#292929',
-        },
         tron: {
           // Main background
           // #0a0f14
-          background: 'rgba(10, 15, 20)',
-          // Buttons, links, highlights, and interactive elements.
+          // #1A1A1A
+          // #3C3C3C
           // #00d9ffd9
-          electricBlue: 'rgba(0, 217, 255)',
-          // Alerts, secondary highlights, or complementary calls to action.
-          neonOrange: 'rgba(255, 77, 0)',
-          //  Primary text on dark backgrounds.
-          white: 'rgba(255, 255, 255)',
-          // Subheadings, captions, or explanatory text.
-          mutedBlue: 'rgba(166, 207, 216)',
-          // Borders, lines, or subtle grid patterns
-          // #003d4c
-          darkDivider: 'rgba(0, 61, 76)',
+          // teal: '#008B8B',
+          // electricBlue: 'rgba(0, 217, 255)',
+          // neonOrange: 'rgba(255, 77, 0)',
+          // mutedBlue: 'rgba(166, 207, 216)',
+          // darkDivider: 'rgba(0, 61, 76)',
+          primary: 'rgba(255, 77, 0)',
+          secondary: '#FF9500',
+
+          background: '#0a0f14',
+          black: '#1A1A1A',
+          offWhite: '#F0F0F0',
+          lighterGray: '#3C3C3C',
+          beige: '#E6D5B8',
+          amber: '#FFC56F',
         },
       },
     },
@@ -38,4 +43,3 @@ const defaultTheme = require('tailwindcss/defaultTheme');
   plugins: [],
 };
 
-//linear-gradient(#DF7212 20%,#1B1B1B 100%)
