@@ -6,8 +6,9 @@ import {
 } from '@/view/components';
 import { Counter } from '@/view/components/animated/text/Counter';
 import FallingText from '@/view/components/animated/text/FallingText';
-import { AnimatePresence, motion, useScroll } from 'framer-motion';
-import { FC, useRef, useState } from 'react';
+import { BouncingSVGContainer } from '@/view/components/animated/wrapper/BoucningSvg';
+import { AnimatePresence, motion, useScroll, Variant } from 'framer-motion';
+import { FC, useEffect, useRef, useState } from 'react';
 
 interface AudienceBrief {
   audience: string;
@@ -161,6 +162,7 @@ export const Tech: FC = () => (
   <>
     <header className='w-screen h-screen relative overflow-hidden '>
       <Counter from={0} to={999} />
+      <BouncingSVGContainer />
     </header>
   </>
 );
