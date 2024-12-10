@@ -76,11 +76,11 @@ export const NavbarItems = ({ isToggled }: Props) => {
         exit='hidden'
         variants={navList}
       >
-        {items.map((item) => (
+        {items.map((item, i) => (
           <motion.li
             className='list-none cursor-pointer text-white text-lg'
             variants={navItem}
-            key={item}
+            key={i}
           >
             <p>{item}</p>
           </motion.li>

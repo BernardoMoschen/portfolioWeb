@@ -33,7 +33,9 @@ const NavbarMenu = () => {
   return (
     <div className='grid grid-rows-1 grid-cols-4 gap-1 lg:gap-2 py-1 place-items-center '>
       {navLinks.map((link) => (
-        <div className='text-tron-primary tracking-tighter '>{link}</div>
+        <div key={link} className='text-tron-primary tracking-tighter '>
+          {link}
+        </div>
       ))}
     </div>
   );

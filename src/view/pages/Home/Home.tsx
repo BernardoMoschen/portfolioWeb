@@ -1,5 +1,6 @@
 import { AuroraBackground, Icon, ProgressText } from '@/view/components';
 import SectionTitle from '@/view/components/headings/SectionTitle';
+import { MaskedContainer } from '@/view/components/MaskedContainer';
 import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import { FC, useRef, useState } from 'react';
 
@@ -33,28 +34,30 @@ const briefList: AudienceBrief[] = [
 export const Hero: FC = () => (
   <>
     <AuroraBackground
-      // colorSet={['rgba(255, 77, 0)', '#FF9500', '#FFC56F', '#E6D5B8']}
       colorSet={['#0a0f14', 'rgba(0, 61, 76)', '#008B8B', '#1A1A1A']}
     >
       <header className='w-screen h-screen relative overflow-hidden backdrop-blur-3xl'>
-        <div className='flex h-full flex-col items-center justify-center '>
-          <h6 className='text-sm uppercase tracking-wider m-2 text-tron-primary font-bold'>
-            Bernardo Moschen
-          </h6>
-          {/* <div className='flex flex-col items-center text-8xl uppercase tracking-tighter  text-tron-beige'>
-            <p>Empowering</p>
-            <p className='text-tron-secondary font-Protest'>dreams</p>
-            <p>since</p>
-            <p>2020</p>
-          </div> */}
-          {/* Debugging nightmares since 2018 */}
+        <div className=' flex h-full flex-col items-center justify-center'>
+          <MaskedContainer className='flex flex-col items-center justify-center'>
+            <div className='flex flex-col items-center text-8xl uppercase tracking-tighter  w-[100.5%]'>
+              <h6 className='text-sm uppercase tracking-wider m-2 text-tron-primary font-bold'>
+                Bernardo Moschen
+              </h6>
+              <div>Debugging</div>
+              <div className='text-tron-secondary font-Protest'>nightmares</div>
+              <div>since</div>
+              <div>2020</div>
+            </div>
+          </MaskedContainer>
           <div className='flex flex-col items-center text-8xl uppercase tracking-tighter  text-tron-beige'>
-            <p>Shipping</p>
-            <p className='text-tron-secondary font-Protest'>dreams</p>
-            <p>since</p>
-            <p>2020</p>
+            <h6 className='text-sm uppercase tracking-wider m-2 text-tron-primary font-bold'>
+              Bernardo Moschen
+            </h6>
+            <div>Empowering</div>
+            <div className='text-tron-secondary font-Protest'>dreams</div>
+            <div>since</div>
+            <div>2020</div>
           </div>
-          {/* Fixing broken stuff since 2009 */}
         </div>
       </header>
     </AuroraBackground>
@@ -254,8 +257,8 @@ export const Home: FC = () => {
   return (
     <>
       <Hero />
-      <About />
-      <Work />
+      {/* <About /> */}
+      {/* <Work /> */}
     </>
   );
 };

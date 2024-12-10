@@ -41,11 +41,16 @@ const NavbarMenu = () => {
           <div className='grid grid-rows-1 grid-cols-4 r bg-g-square gap-1 lg:gap-10 py-1 md:py-3 px-2 md:px-4 rounded-full place-items-center '>
             {navLinks.map((link, i) =>
               i === 0 ? (
-                <div className='bg-accent-surface py-3 px-6 rounded-full '>
+                <div
+                  key={link}
+                  className='bg-accent-surface py-3 px-6 rounded-full '
+                >
                   <Icon className='h-5 w-5' icon='Home' />
                 </div>
               ) : (
-                <div className='text-white text-sm md:text-lg'>{link}</div>
+                <div key={link} className='text-white text-sm md:text-lg'>
+                  {link}
+                </div>
               )
             )}
           </div>
