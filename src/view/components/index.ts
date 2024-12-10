@@ -1,5 +1,5 @@
 export * from './animated';
-export * from './Title';
+export * from './headings';
 export * from './Logo';
-export * from './Container';
+export * from '../layout/Container';
 export * from './Icon';

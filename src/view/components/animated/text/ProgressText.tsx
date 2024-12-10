@@ -3,17 +3,21 @@ import { useRef } from 'react';
 
 interface Props {
   children: string;
+  className?: string;
 }
 
-export function ProgressText({ children }: Props) {
-  return <ProgressParagraph>{children}</ProgressParagraph>;
+export function ProgressText({ children, className }: Props) {
+  return (
+    <ProgressParagraph className={className}>{children}</ProgressParagraph>
+  );
 }
 
 interface ProgressParagraph {
   children: string;
+  className?: string;
 }
 
-function ProgressParagraph({ children }: ProgressParagraph) {
+function ProgressParagraph({ children, className }: ProgressParagraph) {
   const words = children.split(' ');
 
   const pElement = useRef<HTMLParagraphElement>(null);
@@ -23,7 +27,7 @@ function ProgressParagraph({ children }: ProgressParagraph) {
   });
 
   return (
-    <p className='flex flex-wrap' ref={pElement}>
+    <p className={`flex flex-wrap ${className}`} ref={pElement}>
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;

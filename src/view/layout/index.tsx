@@ -10,7 +10,7 @@ export default function Layout() {
       <div className='h-full w-full  static overflow-visible '>
         <NavbarBlur />
         <motion.div
-          className='bg-tron-background'
+          className='bg-tron-background text-tron-beige'
           initial={{
             filter: 'blur(4px)',
           }}
