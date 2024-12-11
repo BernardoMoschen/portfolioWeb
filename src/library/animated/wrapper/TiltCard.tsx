@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, ReactNode, FC } from 'react';
 import {
   motion,
   useMotionTemplate,
@@ -9,7 +9,11 @@ import {
 const ROTATION_RANGE = 32.5;
 const HALF_ROTATION_RANGE = 32.5 / 2;
 
-export const TiltCard = () => {
+interface Props {
+  children: ReactNode;
+}
+
+export const TiltCard: FC<Props> = ({ children }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const x = useMotionValue(0);
@@ -54,23 +58,16 @@ export const TiltCard = () => {
         transformStyle: 'preserve-3d',
         transform,
       }}
-      className='relative h-96 w-72 rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300'
+      className='relative h-96 w-72 rounded-xl bg-gradient-to-br from-tron-beige to-tron-primary'
     >
       <div
         style={{
           transform: 'translateZ(75px)',
           transformStyle: 'preserve-3d',
         }}
-        className='absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg'
+        className='absolute inset-4 grid place-content-center rounded-xl bg-tron-lighterGray shadow-lg'
       >
-        <p
-          style={{
-            transform: 'translateZ(50px)',
-          }}
-          className='text-center text-2xl font-bold'
-        >
-          HOVER ME
-        </p>
+        {children}
       </div>
     </motion.div>
   );

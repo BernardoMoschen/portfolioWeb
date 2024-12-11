@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { About, Hero, Work } from './components';
 import { MaskedContainer } from '@/view/components/MaskedContainer';
+import { Tech } from './components/Tech';
 
 // const CTASection: FC = () => (
 //   <section className='flex flex-row justify-start mt-4 p-2 z-20'>
@@ -52,6 +53,7 @@ export const Home: FC = () => (
       <Hero />
       <About />
       <Work />
+      <Tech />
     </div>
     <MaskedContainer>
       <header className='h-screen relative overflow-hidden backdrop-blur-3xl'>

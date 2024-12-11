@@ -4,12 +4,12 @@ import { FC } from 'react';
 
 export const Work: FC = () => (
   <>
-    <section className='h-screen place-content-center px-6'>
-      <div className='flex flex-col gap-y-6 mx-auto'>
+    <section className='h-screen grid grid-cols-12 gap-5'>
+      <div className='flex flex-col gap-y-6 col-start-2 col-span-full '>
         <SectionTitle>What i do</SectionTitle>
         <div>
           <ul className='flex flex-col gap-4 select-none list-none w-full text-tron-beige'>
-            <li className='border-y-[1px] border-tron-lighterGray flex flex-col md:flex-row items-baseline'>
+            <li className='border-y-[1px] border-tron-lighterGray flex flex-col md:flex-row items-baseline  '>
               <ProgressText className='text-5xl md:text-7xl tracking-tighter'>
                 FRONTEND
               </ProgressText>
@@ -18,7 +18,7 @@ export const Work: FC = () => (
                 dives).
               </span>
             </li>
-            <li className='flex items-baseline flex-col md:flex-row'>
+            <li className='flex items-baseline flex-col md:flex-row  '>
               <ProgressText className='text-5xl md:text-7xl tracking-tighter'>
                 BACKEND
               </ProgressText>
@@ -26,7 +26,7 @@ export const Work: FC = () => (
                 I turn APIs into magic—or at least functioning endpoints.
               </span>
             </li>
-            <li className='border-y-[1px] border-tron-lighterGray flex flex-col md:flex-row items-baseline'>
+            <li className='border-y-[1px] border-tron-lighterGray flex flex-col md:flex-row items-baseline  '>
               <ProgressText className='text-5xl md:text-7xl tracking-tighter'>
                 TESTING
               </ProgressText>
@@ -34,7 +34,7 @@ export const Work: FC = () => (
                 I fix bugs by finding the ones I created.
               </span>
             </li>
-            <li className='flex flex-col md:flex-row items-baseline'>
+            <li className='flex flex-col md:flex-row items-baseline  '>
               <ProgressText className='text-5xl md:text-7xl tracking-tighter'>
                 PERFORMANCE
               </ProgressText>
@@ -42,7 +42,7 @@ export const Work: FC = () => (
                 I make your site fast... eventually.
               </span>
             </li>
-            <li className='border-y-[1px] border-tron-lighterGray flex flex-col md:flex-row items-baseline'>
+            <li className='border-y-[1px] border-tron-lighterGray flex flex-col md:flex-row items-baseline  '>
               <ProgressText className='text-5xl md:text-7xl tracking-tighter'>
                 DEPLOYMENT
               </ProgressText>

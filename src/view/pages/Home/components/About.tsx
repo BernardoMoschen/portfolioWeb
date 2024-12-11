@@ -33,8 +33,8 @@ const briefList: AudienceBrief[] = [
 export const About = () => {
   const [selectedBrief, setSelectedBrief] = useState(briefList[0]);
   return (
-    <section className='h-screen grid place-content-center px-6'>
-      <div className='flex flex-col gap-y-6 '>
+    <section className='h-screen grid grid-cols-12 gap-5'>
+      <div className='flex flex-col gap-y-6 col-start-2 col-span-full '>
         <SectionTitle>About me</SectionTitle>
         <div>
           <ul className='flex flex-row gap-4 select-none list-none'>
