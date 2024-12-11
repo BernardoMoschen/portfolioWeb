@@ -71,8 +71,6 @@ export const Home: FC = () => (
           </div>
         </div>
       </header>
-      <About />
-      <Work />
     </MaskedContainer>
   </>
 );

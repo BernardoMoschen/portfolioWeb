@@ -33,8 +33,8 @@ const briefList: AudienceBrief[] = [
 export const About = () => {
   const [selectedBrief, setSelectedBrief] = useState(briefList[0]);
   return (
-    <section className='h-screen grid grid-cols-12 gap-5'>
-      <div className='flex flex-col gap-y-6 col-start-2 col-span-full '>
+    <section className='h-screen grid grid-cols-12 gap-5 bg-tron-black'>
+      <div className='flex flex-col gap-y-6 col-start-2 row-start-2 col-span-full '>
         <SectionTitle>About me</SectionTitle>
         <div>
           <ul className='flex flex-row gap-4 select-none list-none'>
@@ -70,7 +70,7 @@ export const About = () => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -15, opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className='text-4xl text-start h-full w-full tracking-tight text-tron-beige'
+                className='text-4xl text-start h-full w-full tracking-tight text-tron-beige '
               >
                 <ProgressText>{selectedBrief!.brief}</ProgressText>
               </motion.div>

@@ -5,7 +5,7 @@ import { FC } from 'react';
 export const Work: FC = () => (
   <>
     <section className='h-screen grid grid-cols-12 gap-5'>
-      <div className='flex flex-col gap-y-6 col-start-2 col-span-full '>
+      <div className='flex flex-col gap-y-6 col-start-2 row-start-2 col-span-full '>
         <SectionTitle>What i do</SectionTitle>
         <div>
           <ul className='flex flex-col gap-4 select-none list-none w-full text-tron-beige'>
