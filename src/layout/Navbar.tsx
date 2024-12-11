@@ -32,7 +32,7 @@ const NavbarLogo = () => (
 const NavbarMenu = () => {
   const navLinks = ['Home', 'About', 'Projects', 'Contact me'];
   return (
-    <div className='grid grid-rows-1 grid-cols-4 gap-1 lg:gap-2 py-1 place-items-center '>
+    <div className='hidden md:grid grid-rows-1 grid-cols-4 gap-1 lg:gap-2 py-1 place-items-center '>
       {navLinks.map((link) => (
         <div key={link} className='text-tron-primary tracking-tighter '>
           {link}
@@ -56,7 +56,7 @@ export default function Navbar() {
       initial='hidden'
       animate='visible'
     >
-      <div className='flex justify-between items-center  ml-auto mr-auto min-w-[600px] md:min-w-[1200px]'>
+      <div className='flex justify-between items-center  ml-auto mr-auto min-w-[500px] md:min-w-[1200px]'>
         <>
           <NavbarLogo />
         </>

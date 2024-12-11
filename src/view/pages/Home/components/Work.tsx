@@ -4,43 +4,51 @@ import { FC } from 'react';
 
 export const Work: FC = () => (
   <>
-    <section className='h-[100vh] grid grid-rows-6'>
+    <section className='h-screen place-content-center px-6'>
       <div className='flex flex-col gap-y-6 mx-auto'>
         <SectionTitle>What i do</SectionTitle>
         <div>
-          <ul className='flex flex-col gap-4 select-none list-none w-full'>
-            <li className='border-y-[1px] border-tron-lighterGray'>
-              <ProgressText className='text-8xl tracking-tighter'>
+          <ul className='flex flex-col gap-4 select-none list-none w-full text-tron-beige'>
+            <li className='border-y-[1px] border-tron-lighterGray flex flex-col md:flex-row items-baseline'>
+              <ProgressText className='text-5xl md:text-7xl tracking-tighter'>
                 FRONTEND
               </ProgressText>
-              <p>
+              <span className='text-sm tracking-tighter'>
                 I write JavaScript that works (after a few Stack Overflow
                 dives).
-              </p>
+              </span>
             </li>
-            <li>
-              <ProgressText className='text-8xl tracking-tighter'>
+            <li className='flex items-baseline flex-col md:flex-row'>
+              <ProgressText className='text-5xl md:text-7xl tracking-tighter'>
                 BACKEND
               </ProgressText>
-              <p>I turn APIs into magic—or at least functioning endpoints.</p>
+              <span className='text-sm tracking-tighter'>
+                I turn APIs into magic—or at least functioning endpoints.
+              </span>
             </li>
-            <li className='border-y-[1px] border-tron-lighterGray'>
-              <ProgressText className='text-8xl tracking-tighter'>
-                TESTING/BUG FIXING
+            <li className='border-y-[1px] border-tron-lighterGray flex flex-col md:flex-row items-baseline'>
+              <ProgressText className='text-5xl md:text-7xl tracking-tighter'>
+                TESTING
               </ProgressText>
-              <p>I fix bugs by finding the ones I created.</p>
+              <span className='text-sm tracking-tighter'>
+                I fix bugs by finding the ones I created.
+              </span>
             </li>
-            <li>
-              <ProgressText className='text-8xl tracking-tighter'>
+            <li className='flex flex-col md:flex-row items-baseline'>
+              <ProgressText className='text-5xl md:text-7xl tracking-tighter'>
                 PERFORMANCE
               </ProgressText>
-              <p>I make your site fast... eventually.</p>
+              <span className='text-sm tracking-tighter'>
+                I make your site fast... eventually.
+              </span>
             </li>
-            <li className='border-y-[1px] border-tron-lighterGray'>
-              <ProgressText className='text-8xl tracking-tighter'>
+            <li className='border-y-[1px] border-tron-lighterGray flex flex-col md:flex-row items-baseline'>
+              <ProgressText className='text-5xl md:text-7xl tracking-tighter'>
                 DEPLOYMENT
               </ProgressText>
-              <p>I send code to production and pray nothing breaks.</p>
+              <span className='text-sm tracking-tighter'>
+                I send code to production and pray nothing breaks.
+              </span>
             </li>
           </ul>
         </div>

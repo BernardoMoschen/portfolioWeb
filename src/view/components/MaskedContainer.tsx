@@ -13,7 +13,7 @@ export const MaskedContainer = ({ children, className }: Props) => {
   const { x, y } = useMousePositionContext();
   const { isMobile } = useIsMobile();
   const { unmask } = useMaskedContainerContext();
-  const size = unmask ? 350 : isMobile ? 40 : 55;
+  const size = unmask ? 225 : isMobile ? 20 : 40;
 
   return (
     <motion.div
@@ -24,8 +24,8 @@ export const MaskedContainer = ({ children, className }: Props) => {
         WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
         WebkitMaskSize: `${size}px`,
       }}
-      className={'mask min-h-full absolute z-10 pointer-events-none top-0 left-0 '.concat(
-        `${className ?? ''} ${!unmask && ' mix-blend-difference'}`
+      className={'mask min-h-full absolute z-10 pointer-events-none top-0 left-0 text-black '.concat(
+        `${className ?? ''}`
       )}
     >
       {children}

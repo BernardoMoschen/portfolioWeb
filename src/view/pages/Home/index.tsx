@@ -54,14 +54,16 @@ export const Home: FC = () => (
       <Work />
     </div>
     <MaskedContainer>
-      <header className='w-screen h-screen relative overflow-hidden backdrop-blur-3xl'>
+      <header className='h-screen relative overflow-hidden backdrop-blur-3xl'>
         <div className=' flex h-full flex-col items-center justify-center'>
-          <div className='flex flex-col items-center text-8xl uppercase tracking-tighter  w-[100.5%]'>
+          <div className='flex flex-col items-center text-6xl font-semibold md:text-8xl uppercase tracking-tighter  '>
             <h6 className='text-sm uppercase tracking-wider m-2 text-tron-primary font-bold'>
               Bernardo Moschen
             </h6>
             <div>Debugging</div>
-            <div className='text-tron-secondary font-Protest'>nightmares</div>
+            <div className='text-tron-background font-semibold font-Protest'>
+              nightmares
+            </div>
             <div>since</div>
             <div>2020</div>
           </div>

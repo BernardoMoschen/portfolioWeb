@@ -33,11 +33,11 @@ const briefList: AudienceBrief[] = [
 export const About = () => {
   const [selectedBrief, setSelectedBrief] = useState(briefList[0]);
   return (
-    <section className='h-[100vh] grid grid-rows-6'>
-      <div className='flex flex-col gap-y-6 col-start-2 row-start-2'>
+    <section className='h-screen grid place-content-center px-6'>
+      <div className='flex flex-col gap-y-6 '>
         <SectionTitle>About me</SectionTitle>
         <div>
-          <ul className='flex flex-row gap-4 select-none relative list-none'>
+          <ul className='flex flex-row gap-4 select-none list-none'>
             {briefList.map((brief) => (
               <li
                 key={brief.audience}
