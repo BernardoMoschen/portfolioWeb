@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { useMousePositionContext } from '@/context/useMousePostionContext';
+import { useMousePositionContext } from '@/context/mousePosition/MousePositionContext';
 
 export const Testing = () => {
   const [isHovered, setIsHovered] = useState(false);

@@ -19,7 +19,8 @@
     background: #FFC56F;
     mask-repeat: no-repeat;
     mask-size: 40px;
-    
+    mask-origin: content-box;
+    width: 100%;
     color: #000000
   }
 

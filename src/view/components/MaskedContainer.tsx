@@ -1,6 +1,7 @@
-import { useMousePositionContext } from '@/context/useMousePostionContext';
+import { useMaskedContainerContext } from '@/context/maskedContainer/MaskedContainerContext';
+import { useMousePositionContext } from '@/context/mousePosition/MousePositionContext';
 import { motion } from 'motion/react';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -8,9 +9,9 @@ interface Props {
 }
 
 export const MaskedContainer = ({ children, className }: Props) => {
-  const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePositionContext();
-  const size = isHovered ? 350 : 40;
+  const { unmask } = useMaskedContainerContext();
+  const size = unmask ? 350 : 40;
 
   return (
     <motion.div
@@ -21,19 +22,11 @@ export const MaskedContainer = ({ children, className }: Props) => {
         WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
         WebkitMaskSize: `${size}px`,
       }}
-      className={'mask w-full h-full '.concat(` ${className}`)}
+      className={'mask min-h-full absolute z-10 pointer-events-none top-0 left-0'.concat(
+        `${className ?? ''}`
+      )}
     >
-      <div
-        onMouseEnter={() => {
-          setIsHovered(true);
-        }}
-        onMouseLeave={() => {
-          setIsHovered(false);
-        }}
-        className={`${className}`}
-      >
-        {children}
-      </div>
+      {children}
     </motion.div>
   );
 };

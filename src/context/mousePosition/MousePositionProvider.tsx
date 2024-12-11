@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MousePositionContext } from './useMousePostionContext';
+import { MousePositionContext } from './MousePositionContext';
 
 interface MousePosition {
   x: number;
@@ -16,14 +16,14 @@ export const MousePositionProvider: React.FC<{ children: React.ReactNode }> = ({
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
+      setMousePosition({ x: event.pageX, y: event.pageY });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  });
 
   return (
     <MousePositionContext.Provider value={mousePosition}>
