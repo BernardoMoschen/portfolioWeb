@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { Icon, Logo } from '../components';
+import { Icon } from './Icon';
+import { Logo } from './Logo';
 import { useState } from 'react';
-import { NavbarItems } from './NavbarItems';
+import { NavItems } from './NavItems';
 
 const NavbarMobile = ({
   setToggle,
@@ -18,7 +19,7 @@ const NavbarMobile = ({
       <Icon icon='MenuGrid' />
     </button>
     <AnimatePresence mode='popLayout'>
-      {isToggled && <NavbarItems isToggled={isToggled} />}
+      {isToggled && <NavItems isToggled={isToggled} />}
     </AnimatePresence>
   </div>
 );
@@ -41,7 +42,7 @@ const NavbarMenu = () => {
   );
 };
 
-export default function NavbarBlur() {
+export default function Navbar() {
   const [isToggled, setToggle] = useState(false);
   const navbarVariants = {
     hidden: { y: -80 },

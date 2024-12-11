@@ -1,5 +1,4 @@
-import { useScroll } from 'framer-motion';
-import { FC, useRef } from 'react';
+import { FC } from 'react';
 import { About, Hero, Work } from './components';
 import { MaskedContainer } from '@/view/components/MaskedContainer';
 
@@ -39,39 +38,37 @@ import { MaskedContainer } from '@/view/components/MaskedContainer';
 //   </section>
 // );
 
-export const Home: FC = () => {
-  const headline = 'Dream it. Build it. Scale it.';
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ['center center', 'center end'],
-  });
-  console.log(headline, scrollYProgress);
+// const headline = 'Dream it. Build it. Scale it.';
+// const targetRef = useRef(null);
+// const { scrollYProgress } = useScroll({
+//   target: targetRef,
+//   offset: ['center center', 'center end'],
+// });
+// console.log(headline, scrollYProgress);
 
-  return (
-    <>
-      <div>
-        <Hero />
-        <About />
-        <Work />
-      </div>
-      <MaskedContainer>
-        <header className='w-screen h-screen relative overflow-hidden backdrop-blur-3xl'>
-          <div className=' flex h-full flex-col items-center justify-center'>
-            <div className='flex flex-col items-center text-8xl uppercase tracking-tighter  w-[100.5%]'>
-              <h6 className='text-sm uppercase tracking-wider m-2 text-tron-primary font-bold'>
-                Bernardo Moschen
-              </h6>
-              <div>Debugging</div>
-              <div className='text-tron-secondary font-Protest'>nightmares</div>
-              <div>since</div>
-              <div>2020</div>
-            </div>
+export const Home: FC = () => (
+  <>
+    <div>
+      <Hero />
+      <About />
+      <Work />
+    </div>
+    <MaskedContainer>
+      <header className='w-screen h-screen relative overflow-hidden backdrop-blur-3xl'>
+        <div className=' flex h-full flex-col items-center justify-center'>
+          <div className='flex flex-col items-center text-8xl uppercase tracking-tighter  w-[100.5%]'>
+            <h6 className='text-sm uppercase tracking-wider m-2 text-tron-primary font-bold'>
+              Bernardo Moschen
+            </h6>
+            <div>Debugging</div>
+            <div className='text-tron-secondary font-Protest'>nightmares</div>
+            <div>since</div>
+            <div>2020</div>
           </div>
-        </header>
-        <About />
-        <Work />
-      </MaskedContainer>
-    </>
-  );
-};
+        </div>
+      </header>
+      <About />
+      <Work />
+    </MaskedContainer>
+  </>
+);

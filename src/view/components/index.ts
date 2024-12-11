@@ -1,4 +1,4 @@
 export * from '../../library/animated';
 export * from './headings';
-export * from './Logo';
-export * from './headings/Icon';
+export * from '../../layout/Logo';
+export * from '../../layout/Icon';

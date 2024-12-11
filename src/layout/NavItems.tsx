@@ -58,7 +58,7 @@ const navItem = {
   },
 };
 
-export const NavbarItems = ({ isToggled }: Props) => {
+export const NavItems = ({ isToggled }: Props) => {
   const items = ['Home', 'Products', 'Services', 'About'];
 
   return (
