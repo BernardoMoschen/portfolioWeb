@@ -1,6 +1,5 @@
 import { ProgressText } from '@/view/components';
 import SectionTitle from '@/view/components/headings/SectionTitle';
-import { MaskedContainer } from '@/view/components/MaskedContainer';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 

@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { motion, useScroll, useTransform, MotionValue } from 'motion/react';
 import { ReactLenis } from 'lenis/react';
 import { useRef } from 'react';
-import { StaggeredGrowingText } from '../library/animated/text/StaggeredGrowingText';
+import { StaggeredGrowingText } from '../text/StaggeredGrowingText';
 import logo from '../../assets/trademark/svgLogo.svg';
 import arrowDown from '../../assets/icons/arrow-down-com.svg';
 

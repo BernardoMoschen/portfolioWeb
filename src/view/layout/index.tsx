@@ -1,16 +1,16 @@
 import { Outlet } from 'react-router-dom';
-import { motion } from 'motion/react';
+import NavbarBlur from './NavbarBlur';
 // import { AuroraBackground } from '../components/AuroraHero';
 
 export default function Layout() {
-  return <Outlet />;
-  {
-    /* <div className='h-full w-full  static overflow-visible '> */
-  }
-  {
-    /* <NavbarBlur /> */
-  }
-  {
+  return (
+    // <div className='h-full w-full  static overflow-visible '>
+    // <NavbarBlur />
+    <Outlet />
+    // </div>
+  );
+}
+ 
     /* <motion.div
             className='bg-tron-background text-tron-beige relative'
             initial={{
@@ -24,5 +24,4 @@ export default function Layout() {
               },
             }}
           > */
-  }
-}
+  

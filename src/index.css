@@ -12,7 +12,6 @@
 }
 
 @layer utilities {
-
   .mask {
     position: absolute;
     mask-image: url('./assets/mask.svg');
@@ -23,72 +22,4 @@
     width: 100%;
     color: #000000
   }
-
-
-  .bg-tron-linear {
-     background: linear-gradient(rgba(10, 15, 20) 40%, rgba(0, 61, 76, 0.5) 100%)
-  }
-
-  .bg-g-primary {
-    background: linear-gradient(to right, #193f4a 0%, #e63e21 100%);
-  }
-  .bg-g-circle {
-    background-size: 10px 10px;
-    background-image: radial-gradient(
-      circle,
-      #ff0000 0.2px,
-      rgba(0, 0, 0, 0) 1px
-    );
-  }
-
-  .bg-g-square {
-    background-size: 10px 15px;
-    background-image: linear-gradient(
-        to right,
-        rgba(255, 0, 0, 0.1) 0.5px,
-        transparent 1px
-      ),
-      linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
-  }
-
-  .tron-grid-blue {
-    background: repeating-linear-gradient(
-      0deg,
-      rgba(0, 255, 255, 0.2) 0,
-      rgba(0, 255, 255, 0.2) 2px,
-      transparent 2px,
-      transparent 40px
-    );
-  }
-
-  .tron-border {
-    position: relative;
-    display: inline-block;
-    padding: 20px 40px;
-    color: white;
-    font-size: 20px;
-    background: #0a0f14;
-    border: 2px solid transparent;
-    border-image-source: linear-gradient(90deg, transparent, transparent);
-    border-image-slice: 1;
-    animation: tron-sequential-fill 3s ease-out infinite;
-  }
-
-  .tron-border:hover {
-    box-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff, 0 0 60px #ff4d00;
-    animation: none; /* Optional: pause pulsing animation */
-  }
-
-  @keyframes tron-sequential-fill {
-    0% {
-      border-image-source: linear-gradient(90deg, transparent, transparent);
-    }
-    50% {
-      border-image-source: linear-gradient(90deg, #00d9ff, transparent);
-    }
-    100% {
-      border-image-source: linear-gradient(90deg, #00d9ff, #ff4d00);
-    }
-  }
-
 }
