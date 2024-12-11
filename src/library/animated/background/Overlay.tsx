@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import noise from '@/assets/black-noise.png';
+import noise from '@/assets/img/noise.png';
 
 // NOTE: Father needs an overflow of hidden will be required on a wrapping
 // element to see expected results

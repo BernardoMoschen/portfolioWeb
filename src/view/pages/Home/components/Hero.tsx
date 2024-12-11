@@ -6,8 +6,8 @@ export const Hero: FC = () => {
   return (
     <>
       {/* <AuroraBackground
-      colorSet={['#0a0f14', 'rgba(0, 61, 76)', '#008B8B', '#1A1A1A']}
-    > */}
+        colorSet={['#0a0f14', 'rgba(0, 61, 76)', '#008B8B', '#1A1A1A']}
+      > */}
       <header className='w-screen h-screen relative overflow-hidden backdrop-blur-3xl'>
         <div className=' flex h-full flex-col items-center justify-center'>
           <div
