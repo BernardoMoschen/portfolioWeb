@@ -37,7 +37,7 @@ export const About = () => {
       <div className='flex flex-col gap-y-6 col-start-2 row-start-2 col-span-full '>
         <SectionTitle>About me</SectionTitle>
         <div>
-          <ul className='flex flex-row gap-4 select-none list-none'>
+          <ul className='flex flex-row gap-4 select-none list-none content-baseline'>
             {briefList.map((brief) => (
               <li
                 key={brief.audience}
