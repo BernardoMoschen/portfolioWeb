@@ -42,7 +42,7 @@ export const MarqueeItem = ({ items, from, to }: MarqueItem) => (
     >
       {items.map(({ logo, name }, index) => (
         <div className='flex flex-col items-center pr-10 md:pr-20 gap-7 md:text-2xl text-tron-beige font-medium'>
-          <div className='h-20 w-20 md:h-32 md:w-44 md:mb-10' key={index}>
+          <div className='h-20 w-20 md:h-28 md:w-32 md:mb-2' key={index}>
             {logo}
           </div>
           <span>{name}</span>
@@ -57,7 +57,7 @@ export const MarqueeItem = ({ items, from, to }: MarqueItem) => (
     >
       {items.map(({ logo, name }, index) => (
         <div className='flex flex-col items-center pr-10 md:pr-20 gap-7 md:text-2xl text-tron-beige font-medium'>
-          <div className='h-20 w-20 md:h-32 md:w-44 md:mb-10' key={index}>
+          <div className='h-20 w-20 md:h-28 md:w-32 md:mb-2' key={index}>
             {logo}
           </div>
           <span>{name}</span>
